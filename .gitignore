@@ -1,0 +1,41 @@
+# Project exclude paths
+/sjf4j-core/target/
+/sjf4j-example/target/
+/sjf4j-fastjson/target/
+/sjf4j-gson/target/
+/sjf4j-jackson/target/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# java class file
+*.class
+
+# Package Files #
+*.war
+*.ear
+/target
+/.settings
+/.classpath
+/.project
+/.idea
+
+# ignore Maven generated target folders
+target
+out
+
+# ignore eclipse files
+.project
+.classpath
+.settings
+.factorypath
+.metadata
+.idea
+*.iml
+
+# ignore log files
+*.log
