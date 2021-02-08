@@ -11,17 +11,17 @@
 
 * [Java线程池学习笔记](duo-xian-cheng/java-xian-cheng-chi-xue-xi-bi-ji.md)
 
-## 操作系统&计算机网络
+## 操作系统&计算机网络 <a id="operate-and-network"></a>
 
-* [计算机网络学习笔记](cao-zuo-xi-tong-ji-suan-ji-wang-luo/ji-suan-ji-wang-luo-xue-xi-bi-ji.md)
-* [Shell学习笔记](cao-zuo-xi-tong-ji-suan-ji-wang-luo/shell-xue-xi-bi-ji.md)
-* [Linux学习笔记](cao-zuo-xi-tong-ji-suan-ji-wang-luo/linux-xue-xi-bi-ji.md)
+* [计算机网络学习笔记](operate-and-network/network.md)
+* [Shell学习笔记](operate-and-network/shell.md)
+* [Linux学习笔记](operate-and-network/linux.md)
 
-## 机器学习
+## 机器学习 <a id="ml"></a>
 
-* [智能算法总结](ji-qi-xue-xi/zhi-neng-suan-fa-zong-jie.md)
+* [智能算法总结](ml/zhi-neng-suan-fa-zong-jie.md)
 
-## 计算广告
+## 计算广告 <a id="ad"></a>
 
-* [计算广告简史及概述](ji-suan-guang-gao/ji-suan-guang-gao-jian-shi-ji-gai-shu.md)
+* [计算广告简史及概述](ad/ji-suan-guang-gao-jian-shi-ji-gai-shu.md)
 
