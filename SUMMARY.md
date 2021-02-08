@@ -13,5 +13,5 @@
 
 ## 机器学习
 
-* [只能算法总结](ji-qi-xue-xi/zhi-neng-suan-fa-zong-jie.md)
+* [智能算法总结](ji-qi-xue-xi/zhi-neng-suan-fa-zong-jie.md)
 
