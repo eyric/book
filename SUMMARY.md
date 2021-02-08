@@ -15,3 +15,7 @@
 
 * [智能算法总结](ji-qi-xue-xi/zhi-neng-suan-fa-zong-jie.md)
 
+## 计算广告
+
+* [计算广告简史及概述](ji-suan-guang-gao/ji-suan-guang-gao-jian-shi-ji-gai-shu.md)
+
