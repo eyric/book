@@ -11,6 +11,12 @@
 
 * [Java线程池学习笔记](duo-xian-cheng/java-xian-cheng-chi-xue-xi-bi-ji.md)
 
+## 操作系统&计算机网络
+
+* [计算机网络学习笔记](cao-zuo-xi-tong-ji-suan-ji-wang-luo/ji-suan-ji-wang-luo-xue-xi-bi-ji.md)
+* [Shell学习笔记](cao-zuo-xi-tong-ji-suan-ji-wang-luo/shell-xue-xi-bi-ji.md)
+* [Linux学习笔记](cao-zuo-xi-tong-ji-suan-ji-wang-luo/linux-xue-xi-bi-ji.md)
+
 ## 机器学习
 
 * [智能算法总结](ji-qi-xue-xi/zhi-neng-suan-fa-zong-jie.md)
