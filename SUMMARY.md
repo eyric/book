@@ -3,9 +3,9 @@
 * [Introduction](README.md)
 * [前言](qian-yan.md)
 
-## 数据库
+## 数据库 <a id="database"></a>
 
-* [MySQL索引及锁](shu-ju-ku/mysql-suo-yin-ji-suo.md)
+* [MySQL索引及锁](database/mysql-suo-yin-ji-suo.md)
 
 ## 多线程
 
