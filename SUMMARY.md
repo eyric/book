@@ -23,5 +23,6 @@
 
 ## 计算广告 <a id="ad"></a>
 
+* [大纲](ad/da-gang.md)
 * [计算广告简史及概述](ad/ji-suan-guang-gao-jian-shi-ji-gai-shu.md)
 
