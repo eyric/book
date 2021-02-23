@@ -118,7 +118,7 @@ Linux 发行版是 Linux 内核及各种应用软件的集成版本。
 * [Gentoo](https://zh.wikipedia.org/wiki/Gentoo_Linux)，一个面向高级用户的发行版，所有软件的源代码需要自行编译。
 * [Slackware](https://zh.wikipedia.org/wiki/Slackware)，最早的发行版之一，1993年创建，由[Patrick J. Volkerding](https://zh.wikipedia.org/w/index.php?title=Patrick_J._Volkerding&action=edit&redlink=1)维护。
 
-![](../.gitbook/assets/image%20%2883%29.png)
+![](../.gitbook/assets/image%20%2884%29.png)
 
 **VIM 三个模式**
 
@@ -126,7 +126,7 @@ Linux 发行版是 Linux 内核及各种应用软件的集成版本。
 *  编辑模式（Insert mode）：按下 "i" 等按键之后进入，可以对文本进行编辑；
 * 指令列模式（Bottom-line mode）：按下 ":" 按键之后进入，用于保存退出等操作。
 
-![](../.gitbook/assets/image%20%2881%29.png)
+![](../.gitbook/assets/image%20%2882%29.png)
 
 在指令列模式下，有以下命令用于离开或者保存文件。
 
@@ -157,19 +157,19 @@ GNU 计划，译为革奴计划，它的目标是创建一套完全自由的操�
 
 IDE（ATA）全称 Advanced Technology Attachment，接口速度最大为 133MB/s，因为并口线的抗干扰性太差，且排线占用空间较大，不利电脑内部散热，已逐渐被 SATA 所取代。
 
-![](../.gitbook/assets/image%20%2898%29.png)
+![](../.gitbook/assets/image%20%28100%29.png)
 
 **2. SATA**
 
 SATA 全称 Serial ATA，也就是使用串口的 ATA 接口，抗干扰性强，且对数据线的长度要求比 ATA 低很多，支持热插拔等功能。SATA-II 的接口速度为 300MiB/s，而新的 SATA-III 标准可达到 600MiB/s 的传输速度。SATA 的数据线也比 ATA 的细得多，有利于机箱内的空气流通，整理线材也比较方便。
 
-![](../.gitbook/assets/image%20%2887%29.png)
+![](../.gitbook/assets/image%20%2888%29.png)
 
 **3. SCSI**
 
 SCSI 全称是 Small Computer System Interface（小型机系统接口），经历多代的发展，从早期的 SCSI-II 到目前的 Ultra320 SCSI 以及 Fiber-Channel（光纤通道），接口型式也多种多样。SCSI 硬盘广为工作站级个人电脑以及服务器所使用，因此会使用较为先进的技术，如碟片转速 15000rpm 的高转速，且传输时 CPU 占用率较低，但是单价也比相同容量的 ATA 及 SATA 硬盘更加昂贵。
 
-![](../.gitbook/assets/image%20%2889%29.png)
+![](../.gitbook/assets/image%20%2890%29.png)
 
 ​
 
@@ -177,7 +177,7 @@ SCSI 全称是 Small Computer System Interface（小型机系统接口），经�
 
 SAS（Serial Attached SCSI）是新一代的 SCSI 技术，和 SATA 硬盘相同，都是采取序列式技术以获得更高的传输速度，可达到 6Gb/s。此外也透过缩小连接线改善系统内部空间等。
 
-![](../.gitbook/assets/image%20%28114%29.png)
+![](../.gitbook/assets/image%20%28117%29.png)
 
 ​
 
@@ -214,7 +214,7 @@ GPT 没有扩展分区概念，都是主分区，每个 LAB 可以分 4 个分�
 
 MBR 不支持 2.2 TB 以上的硬盘，GPT 则最多支持到 233 TB = 8 ZB。
 
-![](../.gitbook/assets/image%20%2893%29.png)
+![](../.gitbook/assets/image%20%2895%29.png)
 
 ​
 
@@ -230,7 +230,7 @@ BIOS 是开机的时候计算机执行的第一个程序，这个程序知道可
 
 下图中，第一扇区的主要开机记录（MBR）中的开机管理程序提供了两个选单：M1、M2，M1 指向了 Windows 操作系统，而 M2 指向其它分区的启动扇区，里面包含了另外一个开机管理程序，提供了一个指向 Linux 的选单。
 
-![](../.gitbook/assets/image%20%2895%29.png)
+![](../.gitbook/assets/image%20%2897%29.png)
 
 安装多重引导，最好先安装 Windows 再安装 Linux。因为安装 Windows 时会覆盖掉主要开机记录（MBR），而 Linux 可以选择将开机管理程序安装在主要开机记录（MBR）或者其它分区的启动扇区，并且可以设置开机管理程序的选单。
 
@@ -258,17 +258,17 @@ BIOS 不可以读取 GPT 分区表，而 UEFI 可以。
 
 ​
 
-![](../.gitbook/assets/image%20%2890%29.png)
+![](../.gitbook/assets/image%20%2891%29.png)
 
 **文件读取**
 
 对于 Ext2 文件系统，当要读取一个文件的内容时，先在 inode 中去查找文件内容所在的所有 block，然后把所有 block 的内容读出来。
 
-![](../.gitbook/assets/image%20%2896%29.png)
+![](../.gitbook/assets/image%20%2898%29.png)
 
 而对于 FAT 文件系统，它没有 inode，每个 block 中存储着下一个 block 的编号。
 
-![](../.gitbook/assets/image%20%28100%29.png)
+![](../.gitbook/assets/image%20%28103%29.png)
 
 **磁盘碎片**
 
@@ -305,7 +305,7 @@ inode 具有以下特点：
 
 inode 中记录了文件内容所在的 block 编号，但是每个 block 非常小，一个大文件随便都需要几十万的 block。而一个 inode 大小有限，无法直接引用这么多 block 编号。因此引入了间接、双间接、三间接引用。间接引用是指，让 inode 记录的引用 block 块记录引用信息。
 
-![](../.gitbook/assets/image%20%2892%29.png)
+![](../.gitbook/assets/image%20%2894%29.png)
 
 ​
 
@@ -333,7 +333,7 @@ ext3/ext4 文件系统引入了日志功能，可以利用日志来修复文件�
 * /usr \(unix software resource\)：所有系统默认软件都会安装到这个目录；
 * /var \(variable\)：存放系统或程序运行过程中的数据文件。
 
-![](../.gitbook/assets/image%20%28107%29.png)
+![](../.gitbook/assets/image%20%28110%29.png)
 
 
 
@@ -570,7 +570,7 @@ cp [-adfilprsu] source destination
 
 ​
 
-![](../.gitbook/assets/image%20%28109%29.png)
+![](../.gitbook/assets/image%20%28112%29.png)
 
 ​
 
@@ -693,7 +693,7 @@ locate 使用 /var/lib/mlocate/ 这个数据库来进行搜索，它存储在内
 
 +4、4 和 -4 的指示的时间范围如下：
 
-![](../.gitbook/assets/image%20%28105%29.png)
+![](../.gitbook/assets/image%20%28108%29.png)
 
 ​
 
@@ -1205,13 +1205,13 @@ $ last -n 5 | awk '{print $1 "\t lines: " NR "\t columns: " NF}'
 
 ​
 
-![](../.gitbook/assets/image%20%2878%29.png)
+![](../.gitbook/assets/image%20%2879%29.png)
 
 ​
 
 **SIGCHLD**
 
-![](../.gitbook/assets/image%20%28112%29.png)
+![](../.gitbook/assets/image%20%28115%29.png)
 
 当一个子进程改变了它的状态时（停止运行，继续运行或者退出），有两件事会发生在父进程中：
 
