@@ -1,7 +1,5 @@
 # 初识Spring源码
 
-
-
 本文使用的Spring版本为5.1.2，现在JavaConfig风格+注解的方式来使用Spring是Spring官方主推的，也是现在的主流方式，所以我们从这里出发：
 
 ```java
