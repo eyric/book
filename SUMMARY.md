@@ -5,6 +5,7 @@
 
 ## 数据库 <a id="database"></a>
 
+* [数据库思维导图](database/shu-ju-ku-si-wei-dao-tu.md)
 * [MySQL索引及锁](database/mysql-suo-yin-ji-suo.md)
 
 ## 多线程
