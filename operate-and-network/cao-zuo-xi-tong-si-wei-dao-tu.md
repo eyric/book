@@ -1,6 +1,6 @@
 # 操作系统思维导图
 
-![](../.gitbook/assets/image%20%28119%29.png)
+![](../.gitbook/assets/image%20%28123%29.png)
 
 基础 进程与线程 
 
