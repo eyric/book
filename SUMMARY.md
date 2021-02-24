@@ -36,6 +36,7 @@
 
 ## 数据结构与算法
 
+* [数据结构与算法思维导图](shu-ju-jie-gou-yu-suan-fa/shu-ju-jie-gou-yu-suan-fa-si-wei-dao-tu.md)
 * [Leetcode解题笔记（1-20）](shu-ju-jie-gou-yu-suan-fa/untitled.md)
 
 ## 系统设计
