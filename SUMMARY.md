@@ -14,8 +14,8 @@
 
 ## 操作系统&计算机网络 <a id="operate-and-network"></a>
 
+* [计算机网络思维导图](operate-and-network/ji-suan-ji-wang-luo-si-wei-dao-tu.md)
 * [操作系统思维导图](operate-and-network/cao-zuo-xi-tong-si-wei-dao-tu.md)
-* [计算机网络学习笔记](operate-and-network/network.md)
 * [Shell学习笔记](operate-and-network/shell.md)
 * [Linux学习笔记](operate-and-network/linux.md)
 
