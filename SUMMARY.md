@@ -5,6 +5,7 @@
 
 ## BLOG
 
+* [初识Spring源码](blog/chu-shi-spring-yuan-ma.md)
 * [倒排索引](blog/dao-pai-suo-yin.md)
 
 ## 数据库 <a id="database"></a>
@@ -37,7 +38,6 @@
 
 * [Java基础](jvm/java.md)
 * [消息队列](jvm/xiao-xi-dui-lie.md)
-* [初识Spring源码](jvm/chu-shi-spring-yuan-ma.md)
 * [串一串JVM知识点](jvm/chuan-yi-chuan-jvm-zhi-shi-dian.md)
 
 ## 数据结构与算法
