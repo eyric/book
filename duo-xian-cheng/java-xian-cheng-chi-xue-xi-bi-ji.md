@@ -812,9 +812,9 @@ public static void main(String[] args) throws Exception {
 
 | 方案 | 问题 |
 | :--- | :--- |
-| ![](/Users/liwantao/Library/Application%20Support/typora-user-images/image-20210127175357557.png) | 出自《Java并发编程实践》，该方案偏理论化 |
-| coreSize=2_Ncpu    maxSize=25_Ncpu | 统一配置，没有考虑业务场景 |
-| ![](/Users/liwantao/Library/Application%20Support/typora-user-images/image-20210127185655820.png) | 这种方式考虑到了业务场景，但是是假定流量平均分布得出的 |
+| ![](/Users/liwantao/Library/Application%20Support/typora-user-images/image-20210127175357557.png)Ncpu=number of CPUs                                                                          Ucpu= target CPU utilization\(0&lt;Ucpu&lt;1\)                                                   W/C=ratio of wait time to compute time                      Nthreads=Ncpu\*Ucpu\*\(1+W/C\) | 出自《Java并发编程实践》，该方案偏理论化 |
+| coreSize=2_Ncpu  &lt;br&gt;  maxSize=25_Ncpu | 统一配置，没有考虑业务场景 |
+| ![](/Users/liwantao/Library/Application%20Support/typora-user-images/image-20210127185655820.png)coreSize = tps\*time &lt;br&gt;  maxSize=tps\*time\*\(1.7 - 2\) | 这种方式考虑到了业务场景，但是是假定流量平均分布得出的 |
 
 调研了以上业界方案后，我们并没有得出通用的线程池计算方式。并发任务的执行情况和任务类型相关，IO密集型和CPU密集型的任务运行起来的情况差异非常大，但这种占比是较难合理预估的，这导致很难有一个简单有效的通用公式帮我们直接计算出结果。
 
