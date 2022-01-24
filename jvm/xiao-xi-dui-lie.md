@@ -4,19 +4,17 @@
 
 #### 为什么使用消息队列
 
-* 解耦：多应用间通过消息队列对同一消息进行处理，避免直接调用接口失败导致整个过程失败
+*   解耦：多应用间通过消息队列对同一消息进行处理，避免直接调用接口失败导致整个过程失败
 
-  ![img](https://upload-images.jianshu.io/upload_images/2509688-f3bddbdea97bb30c?imageMogr2/auto-orient/strip%7CimageView2/2/w/790/format/webp)
+    ![img](https://upload-images.jianshu.io/upload\_images/2509688-f3bddbdea97bb30c?imageMogr2/auto-orient/strip%7CimageView2/2/w/790/format/webp)
+*   异步：多应用对消息队列中同一消息进行处理，应用间并发处理消息，相比串行处理，减少处理时间
 
-* 异步：多应用对消息队列中同一消息进行处理，应用间并发处理消息，相比串行处理，减少处理时间
+    ![1556515404010](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556515404010.png)
 
-  ![1556515404010](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556515404010.png)
+    ![1556515420697](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556515420697.png)
+*   削峰：**通过异步处理，将短时间高并发产生的事务消息存储在消息队列中，从而削平高峰期的并发事务。** 举例：在电子商务一些秒杀、促销活动中，合理使用消息队列可以有效抵御促销活动刚开始大量订单涌入对系统的冲击。如下图所示：
 
-  ![1556515420697](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556515420697.png)
-
-* 削峰：**通过异步处理，将短时间高并发产生的事务消息存储在消息队列中，从而削平高峰期的并发事务。** 举例：在电子商务一些秒杀、促销活动中，合理使用消息队列可以有效抵御促销活动刚开始大量订单涌入对系统的冲击。如下图所示：
-
-  ![1556515504533](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556515504533.png)
+    ![1556515504533](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556515504533.png)
 
 #### 消息队列带来的问题
 
@@ -35,16 +33,16 @@
 点对点模式下包括三个角色：
 
 * 消息队列
-* 发送者 \(生产者\)
+* 发送者 (生产者)
 * 接收者（消费者）
 
-![1556515852269](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556515852269.png)
+![1556515852269](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556515852269.png)
 
 消息发送者生产消息发送到queue中，然后消息接收者从queue中取出并且消费消息。消息被消费以后，queue中不再有存储，所以消息接收者不可能消费到已经被消费的消息。
 
 点对点模式特点：
 
-* 每个消息只有一个接收者（Consumer）\(即一旦被消费，消息就不再在消息队列中\)；
+* 每个消息只有一个接收者（Consumer）(即一旦被消费，消息就不再在消息队列中)；
 * 发送者和接收者间没有依赖性，发送者发送消息之后，不管有没有接收者在运行，都不会影响到发送者下次发送消息；
 * 接收者在成功接收消息之后需向队列应答成功，以便消息队列删除当前接收的消息；
 
@@ -53,10 +51,10 @@
 发布/订阅模式下包括三个角色：
 
 * 角色主题（Topic）
-* 发布者\(Publisher\)
-* 订阅者\(Subscriber\)
+* 发布者(Publisher)
+* 订阅者(Subscriber)
 
-![1556515958791](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556515958791.png)
+![1556515958791](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556515958791.png)
 
 发布者将消息发送到Topic,系统将这些消息传递给多个订阅者。
 
@@ -68,11 +66,11 @@
 
 #### 几种消息队列的对比
 
-![1556516080741](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556516080741.png)
+![1556516080741](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556516080741.png)
 
 **RabbitMQ**
 
-RabbitMQ 2007年发布，是一个在AMQP\(高级消息队列协议\)基础上完成的，可复用的企业消息系统，是当前最主流的消息中间件之一。
+RabbitMQ 2007年发布，是一个在AMQP(高级消息队列协议)基础上完成的，可复用的企业消息系统，是当前最主流的消息中间件之一。
 
 主要特性：
 
@@ -117,7 +115,7 @@ ActiveMQ是由Apache出品，ActiveMQ 是一个完全支持JMS1.1和J2EE 1.4规�
 
 优点：
 
-1. 跨平台\(JAVA编写与平台无关有，ActiveMQ几乎可以运行在任何的JVM上\)
+1. 跨平台(JAVA编写与平台无关有，ActiveMQ几乎可以运行在任何的JVM上)
 2. 可以用JDBC：可以将数据持久化到数据库。虽然使用JDBC会降低ActiveMQ的性能，但是数据库一直都是开发人员最熟悉的存储介质。将消息存到数据库，看得见摸得着。而且公司有专门的DBA去对数据库进行调优，主从分离；
 3. 支持JMS ：支持JMS的统一接口;
 4. 支持自动重连；
@@ -164,17 +162,17 @@ RocketMQ出自 阿里公司的开源产品，用 Java 语言实现，在设计�
 
 2.RocketMQ社区关注度及成熟度也不及前两者；
 
-3.没有web管理界面，提供了一个CLI\(命令行界面\)管理工具带来查询、管理和诊断各种问题；
+3.没有web管理界面，提供了一个CLI(命令行界面)管理工具带来查询、管理和诊断各种问题；
 
 4.没有在 mq 核心中去实现JMS等接口；
 
 **Kafka**
 
-Apache Kafka是一个分布式消息发布订阅系统。它最初由LinkedIn公司基于独特的设计实现为一个分布式的提交日志系统\( a distributed commit log\)，之后成为Apache项目的一部分。Kafka系统快速、可扩展并且可持久化。它的分区特性，可复制和可容错都是其不错的特性。
+Apache Kafka是一个分布式消息发布订阅系统。它最初由LinkedIn公司基于独特的设计实现为一个分布式的提交日志系统( a distributed commit log)，之后成为Apache项目的一部分。Kafka系统快速、可扩展并且可持久化。它的分区特性，可复制和可容错都是其不错的特性。
 
 主要特性：
 
-1. 快速持久化，可以在O\(1\)的系统开销下进行消息持久化；
+1. 快速持久化，可以在O(1)的系统开销下进行消息持久化；
 2. 高吞吐，在一台普通的服务器上既可以达到10W/s的吞吐速率；
 3. .完全的分布式系统，Broker、Producer、Consumer都原生自动支持分布式，自动实现负载均衡；
 4. 支持同步和异步复制两种HA；
@@ -210,19 +208,19 @@ Apache Kafka是一个分布式消息发布订阅系统。它最初由LinkedIn公
 
 rabbitmq有三种模式：单机模式，普通集群模式和镜像集群模式，可以采用镜像集群模式来保证高可用。
 
-![1556517445121](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556517445121.png)
+![1556517445121](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556517445121.png)
 
 **Kafka的高可用性**
 
 kafka 0.8以后，提供了HA机制，就是replica副本机制。每个partition的数据都会同步到吉他机器上，形成自己的多个replica副本。然后所有replica会选举一个leader出来，那么生产和消费都跟这个leader打交道，然后其他replica就是follower。写的时候，leader会负责把数据同步到所有follower上去，读的时候就直接读leader上数据即可。
 
-![1556517676996](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556517676996.png)
+![1556517676996](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556517676996.png)
 
 #### 重复消费和如何保证消息队列的幂等性
 
 rabbitmq、rocketmq、kafka，都有可能会出现消费重复消费的问题，因为这问题通常不是mq自己保证的，是给你保证的。以Kafka为例：
 
-#### ![1556517991451](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556517991451.png)
+#### ![1556517991451](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556517991451.png)
 
 其实还是得结合业务来思考，我这里给几个思路：
 
@@ -236,40 +234,36 @@ rabbitmq、rocketmq、kafka，都有可能会出现消费重复消费的问题�
 
 **rabbitMQ**
 
-* 生产者丢失数据
+*   生产者丢失数据
 
-  `事务机制`和`cnofirm机制`最大的不同在于，事务机制是同步的，你提交一个事务之后会阻塞在那儿，但是confirm机制是异步的，你发送个消息之后就可以发送下一个消息，然后那个消息rabbitmq接收了之后会异步回调你一个接口通知你这个消息接收到了。所以一般在生产者这块避免数据丢失，都是用confirm机
+    `事务机制`和`cnofirm机制`最大的不同在于，事务机制是同步的，你提交一个事务之后会阻塞在那儿，但是confirm机制是异步的，你发送个消息之后就可以发送下一个消息，然后那个消息rabbitmq接收了之后会异步回调你一个接口通知你这个消息接收到了。所以一般在生产者这块避免数据丢失，都是用confirm机
+*   rabbitmq弄丢了数据
 
-* rabbitmq弄丢了数据
+    开启rabbitmq的持久化，消息写入之后会持久化到磁盘，哪怕是rabbitmq自己挂了，恢复之后会自动读取之前存储的数据，一般数据不会丢。除非极其罕见的是，rabbitmq还没持久化，自己就挂了，可能导致少量数据会丢失的，但是这个概率较小。
+*   消费者丢失数据
 
-  开启rabbitmq的持久化，消息写入之后会持久化到磁盘，哪怕是rabbitmq自己挂了，恢复之后会自动读取之前存储的数据，一般数据不会丢。除非极其罕见的是，rabbitmq还没持久化，自己就挂了，可能导致少量数据会丢失的，但是这个概率较小。
+    使用rabbitmq提供的ack机制，关闭rabbitmq自动ack，可以通过一个api来调用就行，然后每次在代码里确保处理完的时候，再程序里ack一下。这样的话，如果你还没处理完，不就没有ack？那rabbitmq就认为你还没处理完，这个时候rabbitmq会把这个消费分配给别的consumer去处理，消息是不会丢的。
 
-* 消费者丢失数据
-
-  使用rabbitmq提供的ack机制，关闭rabbitmq自动ack，可以通过一个api来调用就行，然后每次在代码里确保处理完的时候，再程序里ack一下。这样的话，如果你还没处理完，不就没有ack？那rabbitmq就认为你还没处理完，这个时候rabbitmq会把这个消费分配给别的consumer去处理，消息是不会丢的。
-
-  ![1556518813744](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556518813744.png)
+    ![1556518813744](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556518813744.png)
 
 **Kafka消息丢失**
 
-* 消费端丢失数据
+*   消费端丢失数据
 
-  唯一可能导致消费者弄丢数据的情况，就是说，你那个消费到了这个消息，然后消费者那边自动提交了offset，让kafka以为你已经消费好了这个消息，其实你刚准备处理这个消息，你还没处理，你自己就挂了，此时这条消息就丢咯。kafka会自动提交offset，那么只要关闭自动提交offset，在处理完之后自己手动提交offset，就可以保证数据不会丢。但是此时会重复消费，比如你刚处理完，还没提交offset，结果自己挂了，此时肯定会重复消费一次，需要自己保证幂等性。
+    唯一可能导致消费者弄丢数据的情况，就是说，你那个消费到了这个消息，然后消费者那边自动提交了offset，让kafka以为你已经消费好了这个消息，其实你刚准备处理这个消息，你还没处理，你自己就挂了，此时这条消息就丢咯。kafka会自动提交offset，那么只要关闭自动提交offset，在处理完之后自己手动提交offset，就可以保证数据不会丢。但是此时会重复消费，比如你刚处理完，还没提交offset，结果自己挂了，此时肯定会重复消费一次，需要自己保证幂等性。
+*   Kafka丢失数据
 
-* Kafka丢失数据
+    比较常见的一个场景，就是kafka某个broker宕机，然后重新选举partiton的leader时。而此时其他的follower刚好还有些数据没有同步，然后选举某个follower成leader之后，就丢了一些数据。
 
-  比较常见的一个场景，就是kafka某个broker宕机，然后重新选举partiton的leader时。而此时其他的follower刚好还有些数据没有同步，然后选举某个follower成leader之后，就丢了一些数据。
+    所以此时一般是要求起码设置如下4个参数：
 
-  所以此时一般是要求起码设置如下4个参数：
+    * 给这个topic设置replication.factor参数：这个值必须大于1，要求每个partition必须有至少2个副本
+    * 在kafka服务端设置min.insync.replicas参数：这个值必须大于1，这个是要求一个leader至少感知到有至少一个follower还跟自己保持联系，没掉队，这样才能确保leader挂了还有一个follower吧
+    * 在producer端设置acks=all：这个是要求每条数据，必须是写入所有replica之后，才能认为是写成功了
+    * 在producer端设置retries=MAX（很大很大很大的一个值，无限次重试的意思）：这个是要求一旦写入失败，就无限重试，卡在这里了
+*   生产者丢失数据
 
-  * 给这个topic设置replication.factor参数：这个值必须大于1，要求每个partition必须有至少2个副本
-  * 在kafka服务端设置min.insync.replicas参数：这个值必须大于1，这个是要求一个leader至少感知到有至少一个follower还跟自己保持联系，没掉队，这样才能确保leader挂了还有一个follower吧
-  * 在producer端设置acks=all：这个是要求每条数据，必须是写入所有replica之后，才能认为是写成功了
-  * 在producer端设置retries=MAX（很大很大很大的一个值，无限次重试的意思）：这个是要求一旦写入失败，就无限重试，卡在这里了
-
-* 生产者丢失数据
-
-  如果按照上述的思路设置了ack=all，一定不会丢，要求是，你的leader接收到消息，所有的follower都同步到了消息之后，才认为本次写成功了。如果没满足这个条件，生产者会自动不断的重试，重试无限次。
+    如果按照上述的思路设置了ack=all，一定不会丢，要求是，你的leader接收到消息，所有的follower都同步到了消息之后，才认为本次写成功了。如果没满足这个条件，生产者会自动不断的重试，重试无限次。
 
 #### 如何保证消息的顺序性
 
@@ -277,17 +271,17 @@ rabbitmq、rocketmq、kafka，都有可能会出现消费重复消费的问题�
 
 如果存在多个消费者，那么就让每个消费者对应一个queue，然后把要发送 的数据全都放到一个queue，这样就能保证所有的数据只到达一个消费者从而保证每个数据到达数据库都是顺序的。
 
-![1556520082708](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556520082708.png)
+![1556520082708](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556520082708.png)
 
 **kafka保证数据的顺序性**
 
 kafka 写入partion时指定一个key，列如订单id，那么消费者从partion中取出数据的时候肯定是有序的，当开启多个线程的时候可能导致数据不一致，这时候就需要内存队列，将相同的hash过的数据放在一个内存队列里，这样就能保证一条线程对应一个内存队列的数据写入数据库的时候顺序性的，从而可以开启多条线程对应多个内存队列
 
-![img](https://upload-images.jianshu.io/upload_images/7918686-755410a74bf7cd57.png?imageMogr2/auto-orient/)
+![img](https://upload-images.jianshu.io/upload\_images/7918686-755410a74bf7cd57.png?imageMogr2/auto-orient/)
 
 #### 如何处理消息的队列的延时和积压
 
-![1556520590395](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556520590395.png)
+![1556520590395](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556520590395.png)
 
 如果消息已经过期失效，可以采取**批量重导**
 
@@ -295,17 +289,17 @@ kafka 写入partion时指定一个key，列如订单id，那么消费者从parti
 
 **消息队列的组成**
 
-![1556521737517](C:\Users\lwt\AppData\Roaming\Typora\typora-user-images\1556521737517.png)
+![1556521737517](https://c/Users/lwt/AppData/Roaming/Typora/typora-user-images/1556521737517.png)
 
-**1.Producer\(消息生产者\)**：发送消息到Broker。
+**1.Producer(消息生产者)**：发送消息到Broker。
 
-**2.Broker\(服务端\)**：Broker这个概念主要来自于Apache的ActiveMQ，特指消息队列的服务端。
+**2.Broker(服务端)**：Broker这个概念主要来自于Apache的ActiveMQ，特指消息队列的服务端。
 
 主要功能就是：把消息从发送端传送到接收端，这里会涉及到消息的存储、消息通讯机制等。
 
-**3.Consumer\(消息消费者\)**：从消息队列接收消息，consumer回复消费确认。
+**3.Consumer(消息消费者)**：从消息队列接收消息，consumer回复消费确认。
 
-**Broker\(消息队列服务端\)设计重点**
+**Broker(消息队列服务端)设计重点**
 
 **1）消息的转储**：在更合适的时间点投递，或者通过一系列手段辅助消息最终能送达消费机。
 
@@ -323,44 +317,42 @@ kafka 写入partion时指定一个key，列如订单id，那么消费者从parti
 
 **就需要涉及到如下三个方面的设计：**
 
-* 通信协议
+*   通信协议
 
-  > **JMS**
+    > **JMS**
 
-  JMS（Java MessageService）实际上是指JMS API。JMS是由Sun公司早期提出的消息标准，旨在为java应用提供统一的消息操作，包括创建消息、发送消息、接收消息等。
+    JMS（Java MessageService）实际上是指JMS API。JMS是由Sun公司早期提出的消息标准，旨在为java应用提供统一的消息操作，包括创建消息、发送消息、接收消息等。
 
-  **JMS提供了两种消息模型：**
+    **JMS提供了两种消息模型：**
 
-  * 点对点
-  * 以及publish-subscribe（发布订阅）模型。
+    * 点对点
+    * 以及publish-subscribe（发布订阅）模型。
 
-  > **AMQP**
+    > **AMQP**
 
-  AMQP是 Advanced Message Queuing Protocol，即高级消息队列协议。
+    AMQP是 Advanced Message Queuing Protocol，即高级消息队列协议。
 
-  > **JMS和AMQP比较**
+    > **JMS和AMQP比较**
 
-  JMS: 只允许基于JAVA实现的消息平台的之间进行通信
+    JMS: 只允许基于JAVA实现的消息平台的之间进行通信
 
-  AMQP: AMQP允许多种技术同时进行协议通信
+    AMQP: AMQP允许多种技术同时进行协议通信
+*   存储选择
 
-* 存储选择
+    对于分布式系统，存储的选择有以下几种
 
-  对于分布式系统，存储的选择有以下几种
+    * 内存
+    * 本地文件系统
+    * 分布式文件系统
+    * nosql
+    * DB
+*   消费关系维护
 
-  * 内存
-  * 本地文件系统
-  * 分布式文件系统
-  * nosql
-  * DB
+    JMS 规范中的Topic/Queue，Kafka里面的Topic/Partition/ConsumerGroup，RabbitMQ里面的Exchange
 
-* 消费关系维护
+    抛开现象看本质，无外乎是**单播与广播**的区别。所谓单播，就是点到点；而广播，是一点对多点。
 
-  JMS 规范中的Topic/Queue，Kafka里面的Topic/Partition/ConsumerGroup，RabbitMQ里面的Exchange
-
-  抛开现象看本质，无外乎是**单播与广播**的区别。所谓单播，就是点到点；而广播，是一点对多点。
-
-  为了实现广播功能，我们必须要维护消费关系，通常消息队列本身不维护消费订阅关系，可以利用zookeeper等成熟的系统维护消费关系，在消费关系发生变化时下发通知。
+    为了实现广播功能，我们必须要维护消费关系，通常消息队列本身不维护消费订阅关系，可以利用zookeeper等成熟的系统维护消费关系，在消费关系发生变化时下发通知。
 
 **高级功能**
 
@@ -370,4 +362,3 @@ kafka 写入partion时指定一个key，列如订单id，那么消费者从parti
 * 支持不同消息模型
 * 多实例集群功能
 * 事务特性等
-

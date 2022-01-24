@@ -38,7 +38,7 @@
 
 * [Java基础](jvm/java.md)
 * [消息队列](jvm/xiao-xi-dui-lie.md)
-* [Page 1](jvm/page-1.md)
+* [Java字节码增强](jvm/java-zi-jie-ma-zeng-qiang.md)
 * [串一串JVM知识点](jvm/chuan-yi-chuan-jvm-zhi-shi-dian.md)
 
 ## 数据结构与算法

@@ -13,13 +13,13 @@ CPU 并不知道线程、进程之类的概念。CPU 只知道两件事：
 
 接下来的问题就是 CPU 从哪里取出指令呢？答案是来自一个被称为 Program Counter（简称 PC）的寄存器，也就是我们熟知的程序计数器，在这里大家不要把寄存器想得太神秘，你可以简单地把寄存器理解为内存，只不过存取速度更快而已。
 
-![4&#x4F4D;&#x5BC4;&#x5B58;&#x5668;&#x7535;&#x8DEF;&#x56FE;](../.gitbook/assets/image%20%289%29.png)
+![4位寄存器电路图](<../.gitbook/assets/image (9).png>)
 
 那么是谁来设置 PC 寄存器中的指令地址呢？原来 PC 寄存器中的地址默认是自动加 1 的，这当然是有道理的，因为大部分情况下 CPU 都是一条接一条顺序执行，当遇到 if、else 时，这种顺序执行就被打破了，CPU 在执行这类指令时会根据计算结果来动态改变 PC 寄存器中的值，这样 CPU 就可以正确地跳转到需要执行的指令了。
 
 聪明的你一定会问，那么 PC 中的初始值是怎么被设置的呢？在回答这个问题之前我们需要知道 CPU 执行的指令来自哪里？是来自内存，废话，内存中的指令是从磁盘中保存的可执行程序加载过来的，磁盘中可执行程序是编译器生成的，编译器又是从哪里生成的机器指令呢？答案就是**我们定义的函数**。
 
-![&#x4EE3;&#x7801;&#x6267;&#x884C;&#x539F;&#x7406;&#x56FE;](../.gitbook/assets/image%20%285%29.png)
+![代码执行原理图](<../.gitbook/assets/image (5).png>)
 
 
 
@@ -55,7 +55,7 @@ struct *** {
 
 进程的缺点在于只有一个入口函数，也就是 main 函数，因此进程中的机器指令**只能被一个 CPU 执行**，那么有没有办法让多个 CPU 来执行同一个进程中的机器指令呢？聪明的你应该能想到，既然我们可以把 main 函数的第一条指令地址写入 PC 寄存器，那么其它函数和 main 函数又有什么区别呢？答案是没什么区别，main 函数的特殊之处无非就在于是 CPU 执行的第一个函数，除此之外再无特别之处，**我们可以把 PC 寄存器指向 main 函数，就可以把 PC 寄存器指向任何一个函数**。**当我们把 PC 寄存器指向非 main 函数时，线程就诞生了**。
 
-![&#x4ECE;&#x8FDB;&#x7A0B;&#x5230;&#x7EBF;&#x7A0B;](../.gitbook/assets/image%20%2817%29.png)
+![从进程到线程](<../.gitbook/assets/image (17).png>)
 
 ## **一、线程池**
 
@@ -67,17 +67,17 @@ struct *** {
 
 为解决资源分配这个问题，线程池采用了“池化”（Pooling）思想，将资源统一在一起管理。除去线程池，还有其他比较典型的使用池化思想的策略：
 
-* 内存池\(Memory Pooling\)：预先申请内存，提升申请内存速度，减少内存碎片。
-* 连接池\(Connection Pooling\)：预先申请数据库连接，提升申请连接的速度，降低系统的开销。
-* 实例池\(Object Pooling\)：循环使用对象，减少资源在初始化和释放时的昂贵损耗。
+* 内存池(Memory Pooling)：预先申请内存，提升申请内存速度，减少内存碎片。
+* 连接池(Connection Pooling)：预先申请数据库连接，提升申请连接的速度，降低系统的开销。
+* 实例池(Object Pooling)：循环使用对象，减少资源在初始化和释放时的昂贵损耗。
 
 ## **二、Java中的线程池**
 
 ### **1. 总体设计**
 
-![&#x56FE;1 ThreadPoolExecutor&#x7684;UML&#x7C7B;&#x56FE;](../.gitbook/assets/image.png)
+![图1 ThreadPoolExecutor的UML类图](../.gitbook/assets/image.png)
 
-Java中的线程池核心实现类是**ThreadPoolExecutor**，ThreadPoolExecutor实现的顶层接口是Executor，顶层接口Executor提供了一种思想：将任务提交和任务执行进行解耦。用户无需关注如何创建线程，如何调度线程来执行任务，用户只需提供Runnable对象，将任务的运行逻辑提交到执行器\(Executor\)中，由Executor框架完成线程的调配和任务的执行部分。
+Java中的线程池核心实现类是**ThreadPoolExecutor**，ThreadPoolExecutor实现的顶层接口是Executor，顶层接口Executor提供了一种思想：将任务提交和任务执行进行解耦。用户无需关注如何创建线程，如何调度线程来执行任务，用户只需提供Runnable对象，将任务的运行逻辑提交到执行器(Executor)中，由Executor框架完成线程的调配和任务的执行部分。
 
 ```java
 public interface Executor {
@@ -136,11 +136,11 @@ public interface ExecutorService extends Executor {
 
 线程管理部分是消费者，它们被统一维护在线程池内，根据任务请求进行线程的分配，当线程执行完任务后则会继续获取新的任务去执行，最终当线程获取不到任务的时候，线程就会被回收。
 
-![&#x56FE;2 ThreadPoolExecutor&#x8FD0;&#x884C;&#x673A;&#x5236;](../.gitbook/assets/image%20%283%29.png)
+![图2 ThreadPoolExecutor运行机制](<../.gitbook/assets/image (3).png>)
 
 ### **2. 线程池生命周期**
 
-线程池运行的状态，并不是用户显式设置的，而是伴随着线程池的运行，由内部来维护。线程池内部使用一个变量维护两个值：运行状态\(runState\)和线程数量 \(workerCount\)。在具体实现中，线程池将运行状态\(runState\)、线程数量 \(workerCount\)两个关键参数的维护放在了一起，如下代码所示：
+线程池运行的状态，并不是用户显式设置的，而是伴随着线程池的运行，由内部来维护。线程池内部使用一个变量维护两个值：运行状态(runState)和线程数量 (workerCount)。在具体实现中，线程池将运行状态(runState)、线程数量 (workerCount)两个关键参数的维护放在了一起，如下代码所示：
 
 ```java
     private final AtomicInteger ctl = new AtomicInteger(ctlOf(RUNNING, 0));
@@ -167,19 +167,19 @@ public interface ExecutorService extends Executor {
     private static int ctlOf(int rs, int wc) { return rs | wc; }
 ```
 
-`ctl`这个AtomicInteger类型，是对线程池的运行状态和线程池中有效线程的数量进行控制的一个字段， 它同时包含两部分的信息：线程池的运行状态 \(runState\) 和线程池内有效线程的数量 \(workerCount\)，高3位保存runState，低29位保存workerCount，两个变量之间互不干扰。用一个变量去存储两个值，可避免在做相关决策时，出现不一致的情况，不必为了维护两者的一致，而占用锁资源。通过阅读线程池源代码也可以发现，经常出现要同时判断线程池运行状态和线程数量的情况。线程池也提供了若干方法去供用户获得线程池当前的运行状态、线程个数。这里都使用的是位运算的方式，相比于基本运算，速度也会快。
+`ctl`这个AtomicInteger类型，是对线程池的运行状态和线程池中有效线程的数量进行控制的一个字段， 它同时包含两部分的信息：线程池的运行状态 (runState) 和线程池内有效线程的数量 (workerCount)，高3位保存runState，低29位保存workerCount，两个变量之间互不干扰。用一个变量去存储两个值，可避免在做相关决策时，出现不一致的情况，不必为了维护两者的一致，而占用锁资源。通过阅读线程池源代码也可以发现，经常出现要同时判断线程池运行状态和线程数量的情况。线程池也提供了若干方法去供用户获得线程池当前的运行状态、线程个数。这里都使用的是位运算的方式，相比于基本运算，速度也会快。
 
 ThreadPoolExecutor的运行状态有5种，分别为：
 
-| 运行状态 | 状态描述 |
-| :--- | :--- |
-| RUNNING | 能接受新提交的任务，并且也能处理阻塞队列中的任务。 |
-| SHUTDOWN | 关闭状态，不再接受新提交的任务，但却可以继续处理阻塞队列中已保存的任务 |
-| STOP | 不能接受新任务，也不能处理阻塞队列中的任务，会中断正在处理任务的线程 |
-| TIDYING | 所有的任务都已终止，workCount\(有效线程数\)为0 |
-| TERMINATE | 在terminated\(\)方法执行完后进入该状态，线程池彻底终止 |
+| 运行状态      | 状态描述                                |
+| --------- | ----------------------------------- |
+| RUNNING   | 能接受新提交的任务，并且也能处理阻塞队列中的任务。           |
+| SHUTDOWN  | 关闭状态，不再接受新提交的任务，但却可以继续处理阻塞队列中已保存的任务 |
+| STOP      | 不能接受新任务，也不能处理阻塞队列中的任务，会中断正在处理任务的线程  |
+| TIDYING   | 所有的任务都已终止，workCount(有效线程数)为0        |
+| TERMINATE | 在terminated()方法执行完后进入该状态，线程池彻底终止    |
 
-![&#x56FE;3 &#x7EBF;&#x7A0B;&#x6C60;&#x751F;&#x547D;&#x5468;&#x671F;](../.gitbook/assets/image%20%281%29.png)
+![图3 线程池生命周期](<../.gitbook/assets/image (1).png>)
 
 ### **3. 任务管理**
 
@@ -188,34 +188,34 @@ ThreadPoolExecutor的运行状态有5种，分别为：
 首先，所有任务的调度都是由execute方法完成的，这部分完成的工作是：检查现在线程池的运行状态、运行线程数、运行策略，决定接下来执行的流程，是直接申请线程执行，或是缓冲到队列中执行，亦或是直接拒绝该任务。其执行过程如下：
 
 * 首先检测线程池运行状态，如果不是RUNNING，则直接拒绝，线程池要保证在RUNNING的状态下才能接受新的任务。
-* 如果workerCount &lt; corePoolSize，则创建并启动一个线程来执行新提交的任务。
-* 如果workerCount &gt;= corePoolSize，且线程池内的阻塞队列未满，则将任务添加到该阻塞队列中。
-* 如果workerCount &gt;= corePoolSize && workerCount &lt; maximumPoolSize，且线程池内的阻塞队列已满，则创建并启动一个线程来执行新提交的任务。
-* 如果workerCount &gt;= maximumPoolSize，并且线程池内的阻塞队列已满, 则根据拒绝策略来处理该任务, 默认的处理方式是直接抛异常。
+* 如果workerCount < corePoolSize，则创建并启动一个线程来执行新提交的任务。
+* 如果workerCount >= corePoolSize，且线程池内的阻塞队列未满，则将任务添加到该阻塞队列中。
+* 如果workerCount >= corePoolSize && workerCount < maximumPoolSize，且线程池内的阻塞队列已满，则创建并启动一个线程来执行新提交的任务。
+* 如果workerCount >= maximumPoolSize，并且线程池内的阻塞队列已满, 则根据拒绝策略来处理该任务, 默认的处理方式是直接抛异常。
 
 其执行流程如下图所示：
 
-![&#x56FE;4 &#x7EBF;&#x7A0B;&#x6C60;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x7B56;&#x7565;](../.gitbook/assets/image%20%2814%29.png)
+![图4 线程池任务调度策略](<../.gitbook/assets/image (14).png>)
 
 #### **3.2 任务缓冲**
 
-线程池中是以生产者消费者模式，通过一个**阻塞队列**来实现的。阻塞队列缓存任务，工作线程从阻塞队列中获取任务。阻塞队列\(BlockingQueue\)是一个支持两个附加操作的队列。这两个附加的操作是：在队列为空时，获取元素的线程会等待队列变为非空。当队列满时，存储元素的线程会等待队列可用。阻塞队列常用于生产者和消费者的场景，生产者是往队列里添加元素的线程，消费者是从队列里拿元素的线程。
+线程池中是以生产者消费者模式，通过一个**阻塞队列**来实现的。阻塞队列缓存任务，工作线程从阻塞队列中获取任务。阻塞队列(BlockingQueue)是一个支持两个附加操作的队列。这两个附加的操作是：在队列为空时，获取元素的线程会等待队列变为非空。当队列满时，存储元素的线程会等待队列可用。阻塞队列常用于生产者和消费者的场景，生产者是往队列里添加元素的线程，消费者是从队列里拿元素的线程。
 
 下图中展示了线程1往阻塞队列中添加元素，而线程2从阻塞队列中移除元素：
 
-![&#x56FE;5 &#x963B;&#x585E;&#x961F;&#x5217;](../.gitbook/assets/image%20%286%29.png)
+![图5 阻塞队列](<../.gitbook/assets/image (6).png>)
 
 使用不同的队列可以实现不一样的任务存取策略。
 
-| 队列名称 | 描述 |
-| :---: | :--- |
-| ArrayBlockingQueue | 一个用数组实现的有界阻塞队列，按照先进先出\(FIFO\)的原则对元素进行排序，支持公平锁和非公平锁 |
-| LinkedBlockingQueue | 一个由链表组成的有界队列，按照先进先出\(FIFO\)的原则对元素进行排序，队列默认长度Integer.MAX\_VALUE,所以默认创建的该队列有容量危险 |
-| PriorityBlockingQueue | 支持线程优先级排序的无界队列，默认按自然序排序，也可以自定义实现compareTo\(\)方法指定排序规则，不能保证同优先级元素的顺序 |
-| DelayQueue | 实现延迟获取的队列，在创建元素时可以指定多久后才可以从队列中获取该元素 |
-| SynchronousQueue | 一个不储存元素的阻塞队列（无锁），每一个put操作必须等待take操作，否则不能添加元素，Executors.newCachedThreasPool\(\)就使用了这个队列。 |
-| LinkedTransferQueue | 有链表组成的无界阻塞队列\(SynchronousQueue+LinkedBlockingQueue\)，相比于其他队列多了transfer和tryTransfer方法 |
-| LinkedBlockingDeque | 一个有链表组成的双端阻塞队列，队列头部和尾部都可以添加和移除元素，多线程并发时，可以将锁的竞争最多降低一半 |
+|          队列名称         | 描述                                                                                    |
+| :-------------------: | ------------------------------------------------------------------------------------- |
+|   ArrayBlockingQueue  | 一个用数组实现的有界阻塞队列，按照先进先出(FIFO)的原则对元素进行排序，支持公平锁和非公平锁                                      |
+|  LinkedBlockingQueue  | 一个由链表组成的有界队列，按照先进先出(FIFO)的原则对元素进行排序，队列默认长度Integer.MAX\_VALUE,所以默认创建的该队列有容量危险          |
+| PriorityBlockingQueue | 支持线程优先级排序的无界队列，默认按自然序排序，也可以自定义实现compareTo()方法指定排序规则，不能保证同优先级元素的顺序                     |
+|       DelayQueue      | 实现延迟获取的队列，在创建元素时可以指定多久后才可以从队列中获取该元素                                                   |
+|    SynchronousQueue   | 一个不储存元素的阻塞队列（无锁），每一个put操作必须等待take操作，否则不能添加元素，Executors.newCachedThreasPool()就使用了这个队列。 |
+|  LinkedTransferQueue  | 有链表组成的无界阻塞队列(SynchronousQueue+LinkedBlockingQueue)，相比于其他队列多了transfer和tryTransfer方法    |
+|  LinkedBlockingDeque  | 一个有链表组成的双端阻塞队列，队列头部和尾部都可以添加和移除元素，多线程并发时，可以将锁的竞争最多降低一半                                 |
 
 #### **3.3 任务申请**
 
@@ -223,9 +223,9 @@ ThreadPoolExecutor的运行状态有5种，分别为：
 
 线程需要从任务缓存模块中不断地取任务执行，帮助线程从阻塞队列中获取任务，实现线程管理模块和任务管理模块之间的通信。这部分策略由getTask方法实现，其执行流程如下图所示：
 
-![&#x56FE;6 &#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x6D41;&#x7A0B;&#x56FE;](../.gitbook/assets/image%20%2813%29.png)
+![图6 获取任务流程图](<../.gitbook/assets/image (13).png>)
 
-getTask\(\)这部分进行了多次判断，为的是**控制线程的数量**，使其符合线程池的状态。如果线程池现在不应该持有那么多线程，则会返回null值。工作线程Worker会不断接收新任务去执行，而当工作线程Worker接收不到任务的时候，就会开始被**回收**。
+getTask()这部分进行了多次判断，为的是**控制线程的数量**，使其符合线程池的状态。如果线程池现在不应该持有那么多线程，则会返回null值。工作线程Worker会不断接收新任务去执行，而当工作线程Worker接收不到任务的时候，就会开始被**回收**。
 
 #### **3.4 任务拒绝**
 
@@ -241,12 +241,12 @@ public interface RejectedExecutionHandler {
 
 用户可以通过实现这个接口去定制拒绝策略，也可以选择JDK提供的四种已有拒绝策略，其特点如下：
 
-| 策略名称 | 描述 |
-| :--- | :--- |
-| ThreadPoolExecutor.AbortPolicy | 丢弃任务并抛出RejectedExecutionException异常，这是线程池**默认**的拒绝策略 |
-| ThreadPoolExecutor.DiscardPolicy | 丢弃任务但不抛出异常 |
-| ThreadPoolExecutor.DiscardOldestPolicy | 丢弃队列最前面的任务，并重新提交被拒绝的任务 |
-| ThreadPoolExecutor.CallerRunsPolicy | 由调用线程\(提交任务的线程\)执行该任务 |
+| 策略名称                                   | 描述                                                   |
+| -------------------------------------- | ---------------------------------------------------- |
+| ThreadPoolExecutor.AbortPolicy         | 丢弃任务并抛出RejectedExecutionException异常，这是线程池**默认**的拒绝策略 |
+| ThreadPoolExecutor.DiscardPolicy       | 丢弃任务但不抛出异常                                           |
+| ThreadPoolExecutor.DiscardOldestPolicy | 丢弃队列最前面的任务，并重新提交被拒绝的任务                               |
+| ThreadPoolExecutor.CallerRunsPolicy    | 由调用线程(提交任务的线程)执行该任务                                  |
 
 ### **4. 线程管理**
 
@@ -265,15 +265,15 @@ Worker这个工作线程，实现了Runnable接口，并持有一个线程thread
 
 Worker执行任务的模型如下图所示：
 
-![&#x56FE;7 Worker&#x6267;&#x884C;&#x4EFB;&#x52A1;](../.gitbook/assets/image%20%288%29.png)
+![图7 Worker执行任务](<../.gitbook/assets/image (8).png>)
 
 线程池需要管理线程的生命周期，需要在线程长时间不运行的时候进行回收。线程池使用一张**Hash表**去持有线程的引用，这样可以通过添加引用、移除引用这样的操作来控制线程的生命周期。这个时候重要的就是**如何判断线程是否在运行**。
 
 Worker是通过继承AQS，使用AQS来实现独占锁这个功能。没有使用可重入锁ReentrantLock，而是使用AQS，为的就是实现不可重入的特性去反映线程现在的执行状态。
 
-* lock方法一旦获取了独占锁，表示当前线程正在执行任务中。 
+* lock方法一旦获取了独占锁，表示当前线程正在执行任务中。&#x20;
 * 如果正在执行任务，则不应该中断线程。
-* 如果该线程现在不是独占锁的状态，也就是空闲的状态，说明它没有在处理任务，这时可以对该线程进行中断。 
+* 如果该线程现在不是独占锁的状态，也就是空闲的状态，说明它没有在处理任务，这时可以对该线程进行中断。&#x20;
 * 线程池在执行shutdown方法或tryTerminate方法时会调用interruptIdleWorkers方法来中断空闲的线程，interruptIdleWorkers方法会使用**tryLock**方法来判断线程池中的线程是否是空闲状态；如果线程是空闲状态则可以安全回收。
 
 ```java
@@ -302,13 +302,13 @@ private void interruptIdleWorkers(boolean onlyOne) {
 
 在线程回收过程中就使用到了这种特性，回收过程如下图所示：
 
-![&#x56FE;8 &#x7EBF;&#x7A0B;&#x6C60;&#x56DE;&#x6536;&#x8FC7;&#x7A0B;](../.gitbook/assets/image%20%2819%29.png)
+![图8 线程池回收过程](<../.gitbook/assets/image (19).png>)
 
 #### **4.2 Worker线程增加**
 
 增加线程是通过线程池中的addWorker方法，该方法的功能就是增加一个线程，该方法不考虑线程池是在哪个阶段增加的该线程，这个分配线程的策略是在上个步骤完成的，该步骤仅仅完成增加线程，并使它运行，最后返回是否成功这个结果。addWorker方法有两个参数：firstTask、core。firstTask参数用于指定新增的线程执行的第一个任务，该参数可以为空；core参数为true表示在新增线程时会判断当前活动线程数是否少于corePoolSize，false表示新增线程前需要判断当前活动线程数是否少于maximumPoolSize，其执行流程如下图所示：
 
-![&#x56FE;9 &#x7533;&#x8BF7;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x6D41;&#x7A0B;&#x56FE;](../.gitbook/assets/image%20%2815%29.png)
+![图9 申请线程执行流程图](<../.gitbook/assets/image (15).png>)
 
 #### **4.3 Worker线程回收**
 
@@ -326,7 +326,7 @@ try {
 
 线程回收的工作是在processWorkerExit方法完成的。
 
-![&#x56FE;10 &#x7EBF;&#x7A0B;&#x9500;&#x6BC1;&#x6D41;&#x7A0B;](../.gitbook/assets/image%20%2820%29.png)
+![图10 线程销毁流程](<../.gitbook/assets/image (20).png>)
 
 事实上，在这个方法中，将线程引用移出线程池就已经结束了线程销毁的部分。但由于引起线程销毁的可能性有很多，线程池还要判断是什么引发了这次销毁，是否要改变线程池的现阶段状态，是否要根据新状态，重新分配线程。
 
@@ -334,15 +334,15 @@ try {
 
 在Worker类中的run方法调用了runWorker方法来执行任务，runWorker方法的执行过程如下：
 
-1. while循环不断地通过getTask\(\)方法获取任务。
-2. getTask\(\)方法从阻塞队列中取任务。 
-3. 如果线程池正在停止，那么要保证当前线程是中断状态，否则要保证当前线程不是中断状态。 
+1. while循环不断地通过getTask()方法获取任务。
+2. getTask()方法从阻塞队列中取任务。&#x20;
+3. 如果线程池正在停止，那么要保证当前线程是中断状态，否则要保证当前线程不是中断状态。&#x20;
 4. 执行任务。
-5. 如果getTask结果为null则跳出循环，执行processWorkerExit\(\)方法，销毁线程。
+5. 如果getTask结果为null则跳出循环，执行processWorkerExit()方法，销毁线程。
 
 执行流程如下图所示：
 
-![&#x56FE;11 &#x6267;&#x884C;&#x4EFB;&#x52A1;&#x6D41;&#x7A0B;](../.gitbook/assets/image%20%287%29.png)
+![图11 执行任务流程](<../.gitbook/assets/image (7).png>)
 
 ## **三、Spring中的线程池**
 
@@ -439,19 +439,19 @@ public class ScheduleTest {
 
 **fixedDelay**
 
-该方式最简单,在上一个任务执行完成之后，间隔3秒\(因为@Scheduled\(fixedDelay = 3 \* 1000\)\)后，执行下一个任务。用一个图来表示如下:
+该方式最简单,在上一个任务执行完成之后，间隔3秒(因为@Scheduled(fixedDelay = 3 \* 1000))后，执行下一个任务。用一个图来表示如下:
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](<../.gitbook/assets/image (4).png>)
 
 **fixedRate**
 
 如果前一个任务执行时间（这个时间是累计的）超过执行周期，则后一个任务在前一个任务完成后立即执行，否则等待到指定周期时刻执行。
 
-![](../.gitbook/assets/image%20%2818%29.png)
+![](<../.gitbook/assets/image (18).png>)
 
 **cron表达式**
 
-![](../.gitbook/assets/image%20%2812%29.png)
+![](<../.gitbook/assets/image (12).png>)
 
 从上面3中运行结果可以看出，spring @Scheduled执行的定时任务，都会依赖前一个任务的执行情况。如果前面的任务卡死，后面的任务都无法按照预设的时间执行了。
 
@@ -720,7 +720,7 @@ public Object postProcessAfterInitialization(Object bean, String beanName) {
 }
 ```
 
-通过`BeanPostProcessor`的后置处理对满足切点的Bean生成代理，在调用目标方法的时候，会执行通知的invoke\(\)方法
+通过`BeanPostProcessor`的后置处理对满足切点的Bean生成代理，在调用目标方法的时候，会执行通知的invoke()方法
 
 到此，异步实现原理部分就结束了，其实原理很简单。我们需要做的就是定义`切点`、`通知`;要想实现对目标方法的增强，自然而然想到的就是`反向代理`;最后就是如何对原有的Bean进行改变呢？此刻就需要联系到与Bean生命周期相关的`BeanPostProcessor`接口。
 
@@ -777,7 +777,7 @@ public static void main(String[] args) throws Exception {
 
 **分析**：从用户体验角度看，这个结果响应的越快越好，如果一个页面半天都刷不出，用户可能就放弃查看这个商品了。而面向用户的功能聚合通常非常复杂，伴随着调用与调用之间的级联、多级级联等情况，业务开发同学往往会选择使用线程池这种简单的方式，将调用封装成任务并行的执行，缩短总体响应时间。另外，使用线程池也是有考量的，这种场景最重要的就是获取最大的响应速度去满足用户，所以应该不设置队列去缓冲并发任务，调高corePoolSize和maxPoolSize去尽可能创造多的线程快速执行任务。
 
-![&#x56FE;12 &#x5E76;&#x884C;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x63D0;&#x5347;&#x4EFB;&#x52A1;&#x54CD;&#x5E94;&#x901F;&#x5EA6;](../.gitbook/assets/image%20%2821%29.png)
+![图12 并行执行任务提升任务响应速度](<../.gitbook/assets/image (21).png>)
 
 ### **场景2：快速处理批量任务**
 
@@ -785,7 +785,7 @@ public static void main(String[] args) throws Exception {
 
 **分析**：这种场景需要执行大量的任务，我们也会希望任务执行的越快越好。这种情况下，也应该使用多线程策略，并行计算。但与响应速度优先的场景区别在于，这类场景任务量巨大，并不需要瞬时的完成，而是关注如何使用有限的资源，尽可能在单位时间内处理更多的任务，也就是吞吐量优先的问题。所以应该设置队列去缓冲并发任务，调整合适的corePoolSize去设置处理任务的线程数。在这里，设置的线程数过多可能还会引发线程上下文切换频繁的问题，也会降低处理任务的速度，降低吞吐量。
 
-![](../.gitbook/assets/image%20%2811%29.png)
+![](<../.gitbook/assets/image (11).png>)
 
 图13 并行执行任务提升批量任务执行速度
 
@@ -797,12 +797,12 @@ public static void main(String[] args) throws Exception {
 
 回到最初的问题，业务使用线程池是为了获取并发性，对于获取并发性，是否可以有什么其他的方案呢替代？
 
-| 名称 | 描述 | 优势 | 劣势 |
-| :--- | :--- | :--- | :--- |
-| Disruptor框架 | 高性能进程间消息库LMAX使用了一个叫做环形缓冲\(RingBuffer\)的数据结构，避免申请任务时出现的连续争用问题 | 避免连续争用，性能更佳 | 缺乏线程管理能力，使用场景较少 |
-| Actor框架\(基于事件模型\) | Actor模型通过维护多个Actor去处理并发的任务，它放弃了直接使用线程去获取并发性，而是自己定义了一系列系统组件应该如何动作和交互的通用规则，不需要开发者直接使用线程。在原生的线程或协程的级别上做了更高层次的封装，避免直接使用锁，很大程度上解决了传统并发编程模式下大量依赖悲观锁导致的资源竞争。 | 无锁策略，性能更佳；避免直接使用线程，安全性更高 | 在Java中缺少成熟应用；内部复杂，难以排查和调试 |
-| 协程框架 | 协程是一种用户态的轻量级线程，拥有自己的寄存器上下文和栈，在调度切换时，只需要将寄存器上下文和栈保存到其他地方，在切回来的时候，恢复之前保存的上下文和栈即可，这种方式要小于线程切换的开销。 | 侧重IO情况时，性能更佳；与多线程策略无冲突，可结合使用 | 在Java中缺乏成熟的应用 |
-| SEDA\(Staged Event-Driven Architecture\) | 通过将服务器的处理划分各个Stage，利用queue连接起来形成一个pipeline的处理链，并且在Stage中利用控制器进行资源的调控。资源的调度依据运行时的状态监视的数据来进行，从而形成一种反应控制的机制，而stage的划分也简化了编程。 | 通过queue和每个stage的线程池来分担高并发请求并保持吞吐量和响应时间的平衡，spring-batch就是基于SEDA实现的。 | 如何合理地进行资源的初始化分配和对系统进行阶段划分 |
+| 名称                                     | 描述                                                                                                                                                    | 优势                                                                 | 劣势                        |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------- |
+| Disruptor框架                            | 高性能进程间消息库LMAX使用了一个叫做环形缓冲(RingBuffer)的数据结构，避免申请任务时出现的连续争用问题                                                                                            | 避免连续争用，性能更佳                                                        | 缺乏线程管理能力，使用场景较少           |
+| Actor框架(基于事件模型)                        | Actor模型通过维护多个Actor去处理并发的任务，它放弃了直接使用线程去获取并发性，而是自己定义了一系列系统组件应该如何动作和交互的通用规则，不需要开发者直接使用线程。在原生的线程或协程的级别上做了更高层次的封装，避免直接使用锁，很大程度上解决了传统并发编程模式下大量依赖悲观锁导致的资源竞争。 | 无锁策略，性能更佳；避免直接使用线程，安全性更高                                           | 在Java中缺少成熟应用；内部复杂，难以排查和调试 |
+| 协程框架                                   | 协程是一种用户态的轻量级线程，拥有自己的寄存器上下文和栈，在调度切换时，只需要将寄存器上下文和栈保存到其他地方，在切回来的时候，恢复之前保存的上下文和栈即可，这种方式要小于线程切换的开销。                                                        | 侧重IO情况时，性能更佳；与多线程策略无冲突，可结合使用                                       | 在Java中缺乏成熟的应用             |
+| SEDA(Staged Event-Driven Architecture) | 通过将服务器的处理划分各个Stage，利用queue连接起来形成一个pipeline的处理链，并且在Stage中利用控制器进行资源的调控。资源的调度依据运行时的状态监视的数据来进行，从而形成一种反应控制的机制，而stage的划分也简化了编程。                             | 通过queue和每个stage的线程池来分担高并发请求并保持吞吐量和响应时间的平衡，spring-batch就是基于SEDA实现的。 | 如何合理地进行资源的初始化分配和对系统进行阶段划分 |
 
 综合考虑，这些新的方案都能在某种情况下提升并行任务的性能，然而本次重点解决的问题是如何更简易、更安全地获得的并发性。另外，Actor模型的应用实际上甚少，只在Scala中使用广泛，协程框架在Java中维护的也不成熟。这三者现阶段都不是足够的易用，也并不能解决业务上现阶段的问题。
 
@@ -810,11 +810,11 @@ public static void main(String[] args) throws Exception {
 
 有没有一种计算公式，能够让开发同学很简易地计算出某种场景中的线程池应该是什么参数呢？
 
-| 方案 | 问题 |
-| :--- | :--- |
-| ![](/Users/liwantao/Library/Application%20Support/typora-user-images/image-20210127175357557.png)Ncpu=number of CPUs                                                                          Ucpu= target CPU utilization\(0&lt;Ucpu&lt;1\)                                                   W/C=ratio of wait time to compute time                      Nthreads=Ncpu\*Ucpu\*\(1+W/C\) | 出自《Java并发编程实践》，该方案偏理论化 |
-| coreSize=2_Ncpu  &lt;br&gt;  maxSize=25_Ncpu | 统一配置，没有考虑业务场景 |
-| ![](/Users/liwantao/Library/Application%20Support/typora-user-images/image-20210127185655820.png)coreSize = tps\*time &lt;br&gt;  maxSize=tps\*time\*\(1.7 - 2\) | 这种方式考虑到了业务场景，但是是假定流量平均分布得出的 |
+| 方案                                                                                                                                                                                                                                                                              | 问题                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| Ncpu=number of CPUs                                                                          Ucpu= target CPU utilization(0\<Ucpu<1)                                                   W/C=ratio of wait time to compute time                      Nthreads=Ncpu\*Ucpu\*(1+W/C) | 出自《Java并发编程实践》，该方案偏理论化      |
+| coreSize=2_Ncpu  \<br>  maxSize=25_Ncpu                                                                                                                                                                                                                                         | 统一配置，没有考虑业务场景               |
+| coreSize = tps\*time \<br>  maxSize=tps\*time\*(1.7 - 2)                                                                                                                                                                                                                        | 这种方式考虑到了业务场景，但是是假定流量平均分布得出的 |
 
 调研了以上业界方案后，我们并没有得出通用的线程池计算方式。并发任务的执行情况和任务类型相关，IO密集型和CPU密集型的任务运行起来的情况差异非常大，但这种占比是较难合理预估的，这导致很难有一个简单有效的通用公式帮我们直接计算出结果。
 
@@ -822,18 +822,17 @@ public static void main(String[] args) throws Exception {
 
 尽管经过谨慎的评估，仍然不能够保证一次计算出来合适的参数，那么我们是否可以将修改线程池参数的成本降下来，这样至少可以发生故障的时候可以快速调整从而缩短故障恢复的时间呢？基于这个思考，是否可以将线程池的参数从代码中迁移到分布式配置中心上，实现线程池参数可动态配置和即时生效，线程池参数动态化前后的参数修改流程对比如下：
 
-![&#x56FE;14 &#x52A8;&#x6001;&#x4FEE;&#x6539;&#x7EBF;&#x7A0B;&#x6C60;&#x53C2;&#x6570;&#x65B0;&#x65E7;&#x6D41;&#x7A0B;&#x5BF9;&#x6BD4;](../.gitbook/assets/image%20%2816%29.png)
+![图14 动态修改线程池参数新旧流程对比](<../.gitbook/assets/image (16).png>)
 
 ## **参考文献**
 
 * [Java线程池实现原理及其在美团业务中的实践](https://tech.meituan.com/2020/04/02/java-pooling-pratice-in-meituan.html)
 * [spring @Scheduled原理解析](https://juejin.im/post/6844903924936212494)
-* [Spring中异步注解@Async的使用、原理及使用时可能导致的问题](https://blog.csdn.net/qq_41907991/article/details/107500036)
+* [Spring中异步注解@Async的使用、原理及使用时可能导致的问题](https://blog.csdn.net/qq\_41907991/article/details/107500036)
 * [JAVA ThreadPoolExecutor线程池参数设置技巧](https://blog.csdn.net/u011001084/article/details/78297285)
 * [并发编程之Disruptor并发框架](https://juejin.im/post/6844903976924610574)
 * [Actor 编程模型浅谈](https://jiangew.me/actor-model/)
 * [高性能队列——Disruptor](https://tech.meituan.com/2016/11/18/disruptor.html)
-* [多线程并发-SEDA架构](https://blog.csdn.net/xiongping_/article/details/53322602)
+* [多线程并发-SEDA架构](https://blog.csdn.net/xiongping\_/article/details/53322602)
 * [JVM线程池发展趋势](https://www.ktanx.com/blog/p/2124)
 * [Spring Boot 应用监控最佳实践之Micrometer](http://trumandu.github.io/2020/04/08/Spring-Boot-%E5%BA%94%E7%94%A8%E7%9B%91%E6%8E%A7%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E4%B9%8BMicrometer/)
-

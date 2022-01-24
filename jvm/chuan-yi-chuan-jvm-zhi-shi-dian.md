@@ -2,41 +2,41 @@
 
 #### **Java 内存管理机制**
 
-• [00-Java内存区域详解](./Ch1-Java内存管理机制/00-Java内存区域详解.md)
+• [00-Java内存区域详解](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/00-Java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E8%AF%A6%E8%A7%A3.md)
 
-• [01-OOM异常](./Ch1-Java内存管理机制/01-OOM异常.md)
+• [01-OOM异常](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/01-OOM%E5%BC%82%E5%B8%B8.md)
 
-• [02-垃圾收集\(GC\)](./Ch1-Java内存管理机制/02-垃圾收集%28GC%29.md)
+• [02-垃圾收集(GC)](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86\(GC\).md)
 
-• [03-Java内存分配策略](./Ch1-Java内存管理机制/03-Java内存分配策略.md)
+• [03-Java内存分配策略](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/03-Java%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5.md)
 
 #### **Java 虚拟机程序执行**
 
-• [00-Class文件的组成结构](./Ch2-Java虚拟机程序执行/00-Class文件的组成结构.md)
+• [00-Class文件的组成结构](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/00-Class%E6%96%87%E4%BB%B6%E7%9A%84%E7%BB%84%E6%88%90%E7%BB%93%E6%9E%84.md)
 
-• [01-虚拟机的类加载机制](./Ch2-Java虚拟机程序执行/01-虚拟机的类加载机制.md)
+• [01-虚拟机的类加载机制](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/01-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6.md)
 
 • 02-虚拟机字节码执行引擎
 
-– [00-虚拟机栈栈帧结构](./Ch2-Java虚拟机程序执行/02-虚拟机字节码执行引擎_00-虚拟机栈栈帧结构.md)
+– [00-虚拟机栈栈帧结构](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_00-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84.md)
 
-– [01-方法调用](./Ch2-Java虚拟机程序执行/02-虚拟机字节码执行引擎_01-方法调用.md)
+– [01-方法调用](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md)
 
-– [02-基于栈的字节码解释执行引擎](./Ch2-Java虚拟机程序执行/02-虚拟机字节码执行引擎_02-基于栈的字节码解释执行引擎.md)
+– [02-基于栈的字节码解释执行引擎](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_02-%E5%9F%BA%E4%BA%8E%E6%A0%88%E7%9A%84%E5%AD%97%E8%8A%82%E7%A0%81%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E.md)
 
-• [附录0-实现Java类的热替换](./Ch2-Java虚拟机程序执行/附录0-实现Java类的热替换.md)
+• [附录0-实现Java类的热替换](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/%E9%99%84%E5%BD%950-%E5%AE%9E%E7%8E%B0Java%E7%B1%BB%E7%9A%84%E7%83%AD%E6%9B%BF%E6%8D%A2.md)
 
 #### **虚拟机性能监控及故障处理**
 
-• [00-常用虚拟机性能监控工具](./Ch3-虚拟机性能监控及故障处理/00-常用虚拟机性能监控工具.md)
+• [00-常用虚拟机性能监控工具](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch3-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7%E5%8F%8A%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/00-%E5%B8%B8%E7%94%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7%E5%B7%A5%E5%85%B7.md)
 
-• [01-JVM常见参数设置](./Ch3-虚拟机性能监控及故障处理/01-JVM常见参数设置.md)
+• [01-JVM常见参数设置](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch3-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7%E5%8F%8A%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/01-JVM%E5%B8%B8%E8%A7%81%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE.md)
 
-• [02-虚拟机调优案例分析](./Ch3-虚拟机性能监控及故障处理/02-虚拟机调优案例分析.md)
+• [02-虚拟机调优案例分析](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch3-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7%E5%8F%8A%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%B0%83%E4%BC%98%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90.md)
 
 #### **Java 程序运行优化**
 
-• [00-Java运行期优化](./Ch4-Java程序运行优化/00-Java运行期优化.md)
+• [00-Java运行期优化](https://app.gitbook.com/s/-MSzeyNsAQgdcboBIjBr/jvm/Ch4-Java%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E4%BC%98%E5%8C%96/00-Java%E8%BF%90%E8%A1%8C%E6%9C%9F%E4%BC%98%E5%8C%96.md)
 
 ### **“串一串” Java 虚拟机的知识点**
 
@@ -50,7 +50,7 @@
 
 • 说说 JIT 优化
 
-• 说说 Java 的内存模型 \(JMM\)
+• 说说 Java 的内存模型 (JMM)
 
 #### **说说 Java 的内存管理机制**
 
@@ -74,25 +74,25 @@
 
 – 放对象的地方需要垃圾回收：Java 堆和方法区。
 
-• 什么时候回收？（[判断对象的生死](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%28GC%29.md#%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%94%9F%E6%AD%BB)）
+• 什么时候回收？（[判断对象的生死](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86\(GC\).md#%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%94%9F%E6%AD%BB)）
 
-– 判断对象报废了没的算法（重点）：[引用计数法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%28GC%29.md#%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%E7%AE%97%E6%B3%95) 和 [可达性分析法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%28GC%29.md#%E5%8F%AF%E8%BE%BE%E6%80%A7%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95%E4%B8%BB%E6%B5%81)。
+– 判断对象报废了没的算法（重点）：[引用计数法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86\(GC\).md#%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%E7%AE%97%E6%B3%95) 和 [可达性分析法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86\(GC\).md#%E5%8F%AF%E8%BE%BE%E6%80%A7%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95%E4%B8%BB%E6%B5%81)。
 
 • 如何回收？
 
-– GC 算法原理（[垃圾收集算法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%28GC%29.md#%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95)）
+– GC 算法原理（[垃圾收集算法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86\(GC\).md#%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95)）
 
-• [基础：标记 - 清除算法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%28GC%29.md#%E5%9F%BA%E7%A1%80%E6%A0%87%E8%AE%B0---%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95)
+• [基础：标记 - 清除算法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86\(GC\).md#%E5%9F%BA%E7%A1%80%E6%A0%87%E8%AE%B0---%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95)
 
-• [解决效率问题：复制算法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%28GC%29.md#%E8%A7%A3%E5%86%B3%E6%95%88%E7%8E%87%E9%97%AE%E9%A2%98%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95)
+• [解决效率问题：复制算法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86\(GC\).md#%E8%A7%A3%E5%86%B3%E6%95%88%E7%8E%87%E9%97%AE%E9%A2%98%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95)
 
-• [解决空间碎片问题：标记 - 整理算法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%28GC%29.md#%E8%A7%A3%E5%86%B3%E7%A9%BA%E9%97%B4%E7%A2%8E%E7%89%87%E9%97%AE%E9%A2%98%E6%A0%87%E8%AE%B0---%E6%95%B4%E7%90%86%E7%AE%97%E6%B3%95)
+• [解决空间碎片问题：标记 - 整理算法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86\(GC\).md#%E8%A7%A3%E5%86%B3%E7%A9%BA%E9%97%B4%E7%A2%8E%E7%89%87%E9%97%AE%E9%A2%98%E6%A0%87%E8%AE%B0---%E6%95%B4%E7%90%86%E7%AE%97%E6%B3%95)
 
-• [进化：分代收集算法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%28GC%29.md#%E8%BF%9B%E5%8C%96%E5%88%86%E4%BB%A3%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95)
+• [进化：分代收集算法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86\(GC\).md#%E8%BF%9B%E5%8C%96%E5%88%86%E4%BB%A3%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95)
 
 – GC 算法的真正实现：
 
-• [7 个葫芦娃，哦不，垃圾收集器](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%28GC%29.md#7-%E4%B8%AA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8)
+• [7 个葫芦娃，哦不，垃圾收集器](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86\(GC\).md#7-%E4%B8%AA%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8)
 
 – 新生代：Serial、ParNew、Parallel Scavenge
 
@@ -100,7 +100,7 @@
 
 – 全能：G1
 
-• [HotSpot 虚拟机如何高效实现 GC 算法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%28GC%29.md#hotspot-%E4%B8%AD-gc-%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0)
+• [HotSpot 虚拟机如何高效实现 GC 算法](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch1-Java%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/02-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86\(GC\).md#hotspot-%E4%B8%AD-gc-%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0)
 
 说完了对象是怎么被回收的，现在才算是把 Java 的内存管理机制需要用到的小零件给补全了。也就是说，Java 的内存管理流程应该是这样滴：
 
@@ -144,39 +144,39 @@
 
 – 如何自定义类加载器？
 
-• 需要保留双亲委派模型：extends ClassLoader，重写 findClass\(\)
+• 需要保留双亲委派模型：extends ClassLoader，重写 findClass()
 
-• 破坏双亲委派模型：直接重写 loadClass\(\)
+• 破坏双亲委派模型：直接重写 loadClass()
 
-将类加载到内存之后，接下来就要考虑如何执行这个类中的方法了。我们知道 5 大内存区域中的 Java 虚拟机栈是服务与 Java 方法的内存模型，那么我们首先应该了解一下 [虚拟机栈的栈帧到底是怎样的结构](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_00-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84.md#%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84)，虚拟机栈的栈帧结构包括如下几个部分：
+将类加载到内存之后，接下来就要考虑如何执行这个类中的方法了。我们知道 5 大内存区域中的 Java 虚拟机栈是服务与 Java 方法的内存模型，那么我们首先应该了解一下 [虚拟机栈的栈帧到底是怎样的结构](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_00-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84.md#%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84)，虚拟机栈的栈帧结构包括如下几个部分：
 
-• [局部变量表](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_00-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84.md#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E8%A1%A8)（重要）
+• [局部变量表](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_00-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84.md#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E8%A1%A8)（重要）
 
-• [操作数栈](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_00-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84.md#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%A0%88) & [动态连接](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_00-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84.md#%E5%8A%A8%E6%80%81%E8%BF%9E%E6%8E%A5) & [方法返回地址](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_00-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84.md#%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80)
+• [操作数栈](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_00-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84.md#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%A0%88) & [动态连接](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_00-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84.md#%E5%8A%A8%E6%80%81%E8%BF%9E%E6%8E%A5) & [方法返回地址](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_00-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E6%A0%88%E5%B8%A7%E7%BB%93%E6%9E%84.md#%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%9C%B0%E5%9D%80)
 
 了解了辅助方法执行的 Java 虚拟机栈的结构后，接下来就要考虑 Java 类中方法的调用了。就像将大象放进冰箱，方法的调用也不是上来就之间执行方法的，而是分为以下两个步骤：
 
-• [方法调用](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8)：确定被调用的方法是哪一个
+• [方法调用](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8)：确定被调用的方法是哪一个
 
-• [基于栈的解释执行](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_02-%E5%9F%BA%E4%BA%8E%E6%A0%88%E7%9A%84%E5%AD%97%E8%8A%82%E7%A0%81%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E.md#%E5%9F%BA%E4%BA%8E%E6%A0%88%E7%9A%84%E5%AD%97%E8%8A%82%E7%A0%81%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E)：真正的执行方法的字节码
+• [基于栈的解释执行](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_02-%E5%9F%BA%E4%BA%8E%E6%A0%88%E7%9A%84%E5%AD%97%E8%8A%82%E7%A0%81%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E.md#%E5%9F%BA%E4%BA%8E%E6%A0%88%E7%9A%84%E5%AD%97%E8%8A%82%E7%A0%81%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E)：真正的执行方法的字节码
 
 为什么还要加一个方法调用的步骤呢？因为一切方法调用都是在 Class 文件中以常量池中的符号引用存储的，这就导致了不是我们想要执行哪个方法就能立刻执行的，因为我们首先需要根据这个符号引用（其实就一字符串）找到我们想要执行的方法，而这一过程就叫做方法调用。当找到这个方法之后，我们才会开始执行这个方法，也就是基于栈的解释执行。
 
-想要调用一个方法，我们先来看一下虚拟机中有哪些指令可以进行方法调用：[方法调用字节码指令](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4)。
+想要调用一个方法，我们先来看一下虚拟机中有哪些指令可以进行方法调用：[方法调用字节码指令](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4)。
 
 这些字节码会触发不同的方法调用，总体来说，有以下几种：
 
-• [解析调用](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E8%A7%A3%E6%9E%90%E8%B0%83%E7%94%A8)
+• [解析调用](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E8%A7%A3%E6%9E%90%E8%B0%83%E7%94%A8)
 
-• [分派调用](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E5%88%86%E6%B4%BE%E8%B0%83%E7%94%A8)（没有在解析调用中将符号引用转化为直接引用的方法就只能靠分派调用了）
+• [分派调用](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E5%88%86%E6%B4%BE%E8%B0%83%E7%94%A8)（没有在解析调用中将符号引用转化为直接引用的方法就只能靠分派调用了）
 
-– [静态分派（方法重载）](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E9%9D%99%E6%80%81%E5%88%86%E6%B4%BE%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD)
+– [静态分派（方法重载）](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E9%9D%99%E6%80%81%E5%88%86%E6%B4%BE%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD)
 
-– [动态分派（方法重写）](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E5%8A%A8%E6%80%81%E5%88%86%E6%B4%BE%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99)
+– [动态分派（方法重写）](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E5%8A%A8%E6%80%81%E5%88%86%E6%B4%BE%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99)
 
 确定了要调用的方法具体是哪一个了之后，就可开始基于栈的解释执行了，这个时候，方法才真正的被执行。
 
-此外，还需要了解一下 [Java 的动态类型语言支持](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E8%AF%AD%E8%A8%80%E6%94%AF%E6%8C%81)。
+此外，还需要了解一下 [Java 的动态类型语言支持](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch2-Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C/02-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AD%97%E8%8A%82%E7%A0%81%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E\_01-%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8.md#%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E8%AF%AD%E8%A8%80%E6%94%AF%E6%8C%81)。
 
 #### **说说虚拟机性能监控及故障处理**
 
@@ -188,7 +188,7 @@ JVM 常见的参数设置已经设置经验可见：[JVM 常见参数设置](htt
 
 #### **说说 JIT 优化**
 
-JIT \(Just In Time\)，也就是即时编译，首先我们需要知道 [什么是 JIT？](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch4-Java%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E4%BC%98%E5%8C%96/00-Java%E8%BF%90%E8%A1%8C%E6%9C%9F%E4%BC%98%E5%8C%96.md#%E5%8D%B3%E6%97%B6%E7%BC%96%E8%AF%91)
+JIT (Just In Time)，也就是即时编译，首先我们需要知道 [什么是 JIT？](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch4-Java%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E4%BC%98%E5%8C%96/00-Java%E8%BF%90%E8%A1%8C%E6%9C%9F%E4%BC%98%E5%8C%96.md#%E5%8D%B3%E6%97%B6%E7%BC%96%E8%AF%91)
 
 然后，对于 [HotSpot 虚拟机内的即时编译器运作过程](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch4-Java%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E4%BC%98%E5%8C%96/00-Java%E8%BF%90%E8%A1%8C%E6%9C%9F%E4%BC%98%E5%8C%96.md#hotspot-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E7%9A%84%E5%8D%B3%E6%97%B6%E7%BC%96%E8%AF%91%E5%99%A8%E8%BF%90%E4%BD%9C%E8%BF%87%E7%A8%8B)，我们可以通过以下 5 个问题来研究它：
 
@@ -200,7 +200,7 @@ JIT \(Just In Time\)，也就是即时编译，首先我们需要知道 [什么�
 
 • [如何判断热点代码，触发编译？](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch4-Java%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E4%BC%98%E5%8C%96/00-Java%E8%BF%90%E8%A1%8C%E6%9C%9F%E4%BC%98%E5%8C%96.md#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E7%83%AD%E7%82%B9%E4%BB%A3%E7%A0%81%E8%A7%A6%E5%8F%91%E7%BC%96%E8%AF%91)
 
-– [什么是热点代码？\(两种\)](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch4-Java%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E4%BC%98%E5%8C%96/00-Java%E8%BF%90%E8%A1%8C%E6%9C%9F%E4%BC%98%E5%8C%96.md#%E4%BB%80%E4%B9%88%E6%98%AF%E7%83%AD%E7%82%B9%E4%BB%A3%E7%A0%81)
+– [什么是热点代码？(两种)](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch4-Java%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E4%BC%98%E5%8C%96/00-Java%E8%BF%90%E8%A1%8C%E6%9C%9F%E4%BC%98%E5%8C%96.md#%E4%BB%80%E4%B9%88%E6%98%AF%E7%83%AD%E7%82%B9%E4%BB%A3%E7%A0%81)
 
 – [什么是 “多次” 执行？](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch4-Java%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E4%BC%98%E5%8C%96/00-Java%E8%BF%90%E8%A1%8C%E6%9C%9F%E4%BC%98%E5%8C%96.md#%E4%BB%80%E4%B9%88%E6%98%AF-%E5%A4%9A%E6%AC%A1-%E6%89%A7%E8%A1%8C)
 
@@ -224,7 +224,7 @@ JIT \(Just In Time\)，也就是即时编译，首先我们需要知道 [什么�
 
 • [逃逸分析【最前沿】](https://github.com/TangBean/understanding-the-jvm/blob/master/Ch4-Java%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E4%BC%98%E5%8C%96/00-Java%E8%BF%90%E8%A1%8C%E6%9C%9F%E4%BC%98%E5%8C%96.md#%E9%80%83%E9%80%B8%E5%88%86%E6%9E%90%E6%9C%80%E5%89%8D%E6%B2%BF)
 
-#### **说说 Java 的内存模型 \(JMM\)**
+#### **说说 Java 的内存模型 (JMM)**
 
 这部分内容主要与并发编程的内容相关，所以详细介绍会跳到另一个 repo：[Java-Concurrency-in-Practice](https://github.com/TangBean/Java-Concurrency-in-Practice)。
 
@@ -235,4 +235,3 @@ Java 的内存模型主要就是研究一个变量的值是怎么在主内存、
 简单的来讲，就是掌握 [Java 内存模型中的 8 个原子操作](https://github.com/TangBean/Java-Concurrency-in-Practice/blob/master/Ch0-Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/00-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md#java-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84-8-%E4%B8%AA%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C)，并且知道 [Java 内存间是如何通过这 8 个操作进行变量传递的](https://github.com/TangBean/Java-Concurrency-in-Practice/blob/master/Ch0-Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/00-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md#java-%E5%86%85%E5%AD%98%E9%97%B4%E7%9A%84%E6%93%8D%E4%BD%9C)。
 
 其实 Java 的内存模型就是围绕着在并发的过程中如何处理 [原子性](https://github.com/TangBean/Java-Concurrency-in-Practice/blob/master/Ch0-Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/00-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md#%E5%8E%9F%E5%AD%90%E6%80%A7)、[可见性](https://github.com/TangBean/Java-Concurrency-in-Practice/blob/master/Ch0-Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/00-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md#%E5%8F%AF%E8%A7%81%E6%80%A7)、[有序性](https://github.com/TangBean/Java-Concurrency-in-Practice/blob/master/Ch0-Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/00-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md#%E6%9C%89%E5%BA%8F%E6%80%A7) 这 3 个特征建立的。同时 Java 除了可以依靠 volatile 和 synchronized 来保证有序性外，它自己本身还有一个 [Happens-Before 原则](https://github.com/TangBean/Java-Concurrency-in-Practice/blob/master/Ch0-Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/00-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.md#happens-before-%E8%A7%84%E5%88%99)，依靠这个原则，我们就可以判断并发环境下的两个操作是否可能存在冲突了。
-
