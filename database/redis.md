@@ -155,11 +155,118 @@ struct sdshdr {
 
 其中，类型 `sds` 是 `char *` 的别名（alias），而结构 `sdshdr` 则保存了 `len` 、 `free` 和 `buf` 三个属性。通过 `len` 属性， `sdshdr` 可以实现复杂度为 O(1) 的长度计算操作。另一方面， 通过对 `buf` 分配一些额外的空间， 并使用 `free` 记录未使用空间的大小， `sdshdr` 可以让执行追加操作所需的内存重分配次数大大减少。
 
-****
 
-****
 
-****
+#### 2.3 Redis Lists
+
+Redis lists基于Linked Lists实现，这意味着即使在一个list中有数百万个元素，在头部或尾部添加一个元素的操作，其时间复杂度也是常数级别的。用LPUSH 命令在十个元素的list头部添加新元素，和在千万元素list头部添加新元素的速度相同。
+
+| Redis命令                | RedisTemplate                                           | 说明               |
+| ---------------------- | ------------------------------------------------------- | ---------------- |
+| `RPUSH key value`\`    | `redisTemplate.opsForList().rightPush(key, value);`     | 将list放入缓存,从右边添加  |
+| `LPUSH key value`      | `redisTemplate.opsForList().leftPush(key, value);`      | 将list放入缓存,从左边添加  |
+| `LRANGE key 0 -1`      | `redisTemplate.opsForList().range(key, start, end);`    | 获取list缓存的内容      |
+| `LLEN key`             | `redisTemplate.opsForList().size(key);`                 | 获取list缓存的长度      |
+| `LINDEX key index`     | `redisTemplate.opsForList().index(key, index);`         | 通过索引 获取list中的值   |
+| `LSET key index value` | `redisTemplate.opsForList().set(key, index, value);`    | 根据索引修改list中的某条数据 |
+| `LREM key count value` | `redisTemplate.opsForList().remove(key, count, value);` | 移除N个值为value      |
+
+
+
+基于Redis Lists可以实现消息队列，将需要延后处理的任务结构体序列化成字符串塞进 Redis 的列表，另一个线程从这个列表中轮询数据进行处理。
+
+![图2 基于Redis Lists实现消息队列](../.gitbook/assets/redis-rpop.png)
+
+通过 LPUSH，RPOP 这样的方式，会存在一个性能风险点，就是消费者如果想要及时的处理数据，就要在程序中写个类似 while(true) 这样的逻辑，不停的去调用 RPOP 或 LPOP 命令，这就会给消费者程序带来些不必要的性能损失。
+
+所以，Redis 还提供了 BLPOP、BRPOP 这种阻塞式读取的命令(带 B-Bloking的都是阻塞式)，客户端在没有读到队列数据时，自动阻塞，直到有新的数据写入队列，再开始读取新数据。这种方式就节省了不必要的 CPU 开销。
+
+
+
+#### 2.4 Redis Sets
+
+Set类型是一种无顺序集合, 它和List类型最大的区别是：集合中的元素没有顺序, 且元素是唯一的，Set类型的底层是通过哈希表实现的。
+
+| Redis命令                   | RedisTemplate                                                  | 说明                    |
+| ------------------------- | -------------------------------------------------------------- | --------------------- |
+| `SMEMBEredisTemplate key` | `redisTemplate.opsForedisTemplateet().memberedisTemplate(key)` | 根据key获取Set中的所有值       |
+| `SISMEMBER key value`     | `redisTemplate.opsForedisTemplateet().isMember(key, value);`   | 根据value从一个set中查询,是否存在 |
+| `SADD key value1 value2`  | `redisTemplate.opsForedisTemplateet().add(key, values);`       | 将数据放入set缓存            |
+| `SCARD key`               | `redisTemplate.opsForedisTemplateet().size(key);`              | 获取set缓存的长度            |
+| `SREM key value1 value2`  | `redisTemplate.opsForedisTemplateet().remove(key, values);`    | 移除值为value的            |
+
+
+
+#### 2.5 Redis Hashes
+
+该类型是由field和关联的value组成的map。其中，field和value都是字符串类型的。
+
+| Redis命令                             | RedisTemplate                                           | 说明                             |
+| ----------------------------------- | ------------------------------------------------------- | ------------------------------ |
+| `HMSET key key1 value1 key2 value2` | `redisTemplate.opsForHash().putAll(key, map);`          | 设置缓存                           |
+| `HSET key item value`               | `redisTemplate.opsForHash().put(key, item, value);`     | 向一张hash表中放入数据,如果不存在将创建         |
+| `HGET key item`                     | `redisTemplate..opsForHash().get(key, item);`           | 获取缓存，字段值                       |
+| `HMGET key`                         | `redisTemplate.opsForHash().entries(key);`              | 获取hashKey对应的所有键值               |
+| `DELETE key item1 item2 item3`      | `redisTemplate.opsForHash().delete(key, item);`         | 将 key 的值设为 value ，当且仅当 key 不存在 |
+| `HEXISTS key item`                  | `redisTemplate.opsForHash().hasKey(key, item);`         | 判断hash表中是否有该项的值                |
+| `HINCRBY key item by`               | `redisTemplate.opsForHash().increment(key, item, by);`  | hash递增 如果不存在,就会创建一个 并把新增后的值返回  |
+| `HDEL key item by`                  | `redisTemplate.opsForHash().increment(key, item, -by);` | hash递减                         |
+
+
+
+#### 2.6 Redis Sorted sets
+
+ZSet是一种有序集合类型，每个元素都会关联一个double类型的分数权值，通过这个权值来为集合中的成员进行从小到大的排序。sorted set与set结构一样均不允许重复的元素，但与set不同的是sorted set除了member(元素)之外，每个member都会关联一个分数score。sorted set根据score对元素进行升序排列，如果有多个元素的分数相同，那么按照member的字典序升序排列，sorted set中元素不允许相同，但score允许相同。
+
+适用场景：
+
+* 排行榜，以用户id为member，充值总金额或得分作为score，那么就可以得到排行榜，但是需要注意的是sorted set是升序排列的，所以如果想要取前10的话，需要从最后一个元素开始。&#x20;
+* 消息延迟发送，将消息体作为member，发送时间戳以score的形式存储，通过定时任务扫描sorted set，对score小于等于当前时间的score对应的消息体进行发送。&#x20;
+
+sorted set有两种实现方式，一种是ziplist压缩表，一种是zset(dict、skiplist)，redis.conf有两个配置来控制，当sorted set中的元素个数小于128时(即元素对member score的个数，共256个元素)，使用ziplist，当元素对中member长度超过64个字节时使用zset。
+
+| zset-max-ziplist-entries | 128 |
+| ------------------------ | --- |
+| zset-max-ziplist-value   | 64  |
+
+
+
+（1）ziplist
+
+Redis是基于内存的nosql，有些场景下为了节省内存redis会用“时间”换“空间”，ziplist就是很典型的例子。ziplist是由_**一系列特殊编码的连续内存块组成的顺序存储结构**_，类似于数组，ziplist在内存中是连续存储的，但是不同于数组，为了节省内存 ziplist的每个元素所占的内存大小可以不同（数组中叫元素，ziplist叫节点**entry**，下文都用“节点”），每个节点可以用来存储一个整数或者一个字符串。\
+下图是ziplist在内存中的布局：
+
+![图3 ziplist](../.gitbook/assets/ziplist.png)
+
+* zlbytes: ziplist的长度（单位: 字节)，是一个32位无符号整数
+* zltail: ziplist最后一个节点的偏移量，反向遍历ziplist或者pop尾部节点的时候有用。
+* zllen: ziplist的节点（entry）个数
+* entry: 节点
+* zlend: 值为0xFF，用于标记ziplist的结尾
+
+
+
+（2）skiplist
+
+跳表是一种随机化的数据结构，目前开源软件 Redis 和 LevelDB 都有用到它，它的效率和红黑树以及 AVL 树不相上下，但跳表的原理相当简单，只要你能熟练操作链表，就能轻松实现一个 SkipList。
+
+跳表本质上是对链表的一种优化，通过逐层跳步采样的方式构建索引，以加快查找速度。如果只用普通链表，只能一个一个往后找。跳表就不一样了，可以高层索引，一次跳跃多个节点，如果找过头了，就用更下层的索引。
+
+![图4 skiplist](../.gitbook/assets/skiplist.png)
+
+使用概率均衡的思路，确定新插入节点的层数。Redis使用随机函数决定层数。直观上来说，默认1层，和丢硬币一样，如果是正面就继续往上，这样持续迭代，最大层数32层。可以看到，50%的概率被分配到第一层，25%的概率被分配到第二层，12.5%的概率被分配到第三层。这种方式保证了越上层数量越少，自然跨越起来越方便。
+
+#### 2.7 Redis特性
+
+* 事务
+* 发布订阅
+* Stream
+
+
+
+
+
+
 
 #### 三、Redis高可用
 
@@ -180,6 +287,8 @@ reactor模型
 缓存
 
 分布式锁
+
+消息队列(pub/sub stream)
 
 
 
