@@ -10,6 +10,7 @@
 
 ## 数据库 <a href="#database" id="database"></a>
 
+* [消息队列](database/xiao-xi-dui-lie.md)
 * [Page 1](database/page-1.md)
 * [Redis](database/redis.md)
 * [数据库思维导图](database/shu-ju-ku-si-wei-dao-tu.md)

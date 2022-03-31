@@ -451,7 +451,7 @@ Redis有两种发布/订阅模式：
 
 
 
-![图5 基于chanel的发布订阅](<../.gitbook/assets/image (141).png>)
+![图5 基于chanel的发布订阅](<../.gitbook/assets/image (141) (1).png>)
 
 **基于模式(pattern)的发布/订阅**
 
