@@ -1,6 +1,6 @@
 # Redis
 
-![](<../.gitbook/assets/image (140).png>)
+![](<../.gitbook/assets/image (140) (1).png>)
 
 ### 一、Redis基础概念
 
@@ -457,7 +457,7 @@ Redis有两种发布/订阅模式：
 
 如果有某个/某些模式和这个频道匹配的话，那么所有订阅这个/这些频道的客户端也同样会收到信息。
 
-![图6 基于pattern的发布订阅](<../.gitbook/assets/image (140) (1).png>)
+![图6 基于pattern的发布订阅](<../.gitbook/assets/image (140) (1) (1).png>)
 
 
 
