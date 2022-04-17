@@ -12,7 +12,9 @@
 * [数据库思维导图](blog/shu-ju-ku-si-wei-dao-tu.md)
 * [MySQL](blog/mysql/README.md)
   * [MySQL索引及锁](blog/mysql/mysql-suo-yin-ji-suo.md)
-  * [一、基础架构：一条SQL查询语句是如何执行的？](blog/mysql/yi-ji-chu-jia-gou-yi-tiao-sql-cha-xun-yu-ju-shi-ru-he-zhi-hang-de.md)
+  * [一、基础架构：一条SQL查询语句是如何执行的？](blog/mysql/page-1.md)
+  * [三、事务隔离：为什么你改了我还看不见？](blog/mysql/san-shi-wu-ge-li-wei-shi-mo-ni-gai-le-wo-huan-kan-bu-jian.md)
+  * [二、日志系统：一条SQL更新语句是如何执行的？](blog/mysql/er-ri-zhi-xi-tong-yi-tiao-sql-geng-xin-yu-ju-shi-ru-he-zhi-hang-de.md)
 * [Redis](blog/redis.md)
 
 ## Java及其框架 <a href="#java" id="java"></a>
