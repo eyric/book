@@ -16,7 +16,7 @@
   * [二、日志系统：一条SQL更新语句是如何执行的？](blog/mysql/er-ri-zhi-xi-tong-yi-tiao-sql-geng-xin-yu-ju-shi-ru-he-zhi-hang-de.md)
   * [三、事务隔离：为什么你改了我还看不见？](blog/mysql/san-shi-wu-ge-li-wei-shi-mo-ni-gai-le-wo-huan-kan-bu-jian.md)
   * [四、深入浅出索引](blog/mysql/si-shen-ru-qian-chu-suo-yin.md)
-* [Redis](blog/redis/README.md)
+* [Redis](blog/redis.md)
   * [一、Redis基础概念](blog/redis/yi-redis-ji-chu-gai-nian.md)
   * [二、Redis数据结构](blog/redis/er-redis-shu-ju-jie-gou.md)
   * [三、Redis特性](blog/redis/san-redis-te-xing.md)
