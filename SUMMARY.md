@@ -1,25 +1,24 @@
 # Table of contents
 
-* [Introduction](README.md)
-* [前言](qian-yan.md)
+* [数据结构与算法](README.md)
+* [倒排索引](dao-pai-suo-yin.md)
 
-## BLOG
+## 数据库 <a href="#blog" id="blog"></a>
 
-* [初识Spring源码](blog/chu-shi-spring-yuan-ma.md)
-* [倒排索引](blog/dao-pai-suo-yin.md)
-
-## 数据库 <a href="#database" id="database"></a>
+## 分布式与系统设计 <a href="#database" id="database"></a>
 
 * [消息队列](database/xiao-xi-dui-lie.md)
-* [MySQL](database/page-1.md)
+* [MySQL](database/mysql/README.md)
+  * [Page 1](database/mysql/page-1.md)
 * [Redis](database/redis.md)
 * [数据库思维导图](database/shu-ju-ku-si-wei-dao-tu.md)
 * [MySQL索引及锁](database/mysql-suo-yin-ji-suo.md)
 
-## 多线程
+## Java及其框架 <a href="#java" id="java"></a>
 
-* [多线程纲要](duo-xian-cheng/duo-xian-cheng-gang-yao.md)
-* [Java线程池学习笔记](duo-xian-cheng/java-xian-cheng-chi-xue-xi-bi-ji.md)
+* [Java线程池学习笔记](java/java-xian-cheng-chi-xue-xi-bi-ji.md)
+* [初识Spring源码](java/chu-shi-spring-yuan-ma.md)
+* [多线程纲要](java/duo-xian-cheng-gang-yao.md)
 
 ## 操作系统&计算机网络 <a href="#operate-and-network" id="operate-and-network"></a>
 

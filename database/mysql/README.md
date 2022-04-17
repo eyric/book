@@ -14,7 +14,7 @@ mysql> select * from T where ID=10；
 
 我们看到的只是输入一条语句，返回一个结果，却不知道这条语句在 MySQL 内部的执行过程。下面给出的是 MySQL 的基本架构示意图，从中你可以清楚地看到 SQL 语句在 MySQL 的各个功能模块中的执行过程。
 
-![MySQL逻辑架构图](<../.gitbook/assets/image (142) (1) (1).png>)
+![MySQL逻辑架构图](<../../.gitbook/assets/image (142) (1) (1).png>)
 
 大体来说，MySQL 可以分为 **Server 层**和**存储引擎层**两部分。
 
@@ -38,7 +38,7 @@ mysql -h$ip -P$port -u$user -p
 
 连接完成后，如果你没有后续的动作，这个连接就处于空闲状态，你可以在 show processlist 命令中看到它。文本中这个图是 show processlist 的结果，其中的 Command 列显示为“Sleep”的这一行，就表示现在系统里面有一个空闲连接。
 
-![](<../.gitbook/assets/image (143) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (143) (1) (1) (1).png>)
 
 客户端如果太长时间没动静，连接器就会自动将它断开。这个时间是由参数 **wait\_timeout** 控制的，默认值是 8 小时。如果在连接被断开之后，客户端再次发送请求的话，就会收到一个错误提醒： Lost connection to MySQL server during query。这时候如果你要继续，就需要重连，然后再执行请求了。
 
@@ -169,7 +169,7 @@ mysql> update T set c=c+1 where ID=2;
 
 与此类似，InnoDB 的 redo log 是固定大小的，比如可以配置为一组 4 个文件，每个文件的大小是 1GB，那么这块“粉板”总共就可以记录 4GB 的操作。从头开始写，写到末尾就又回到开头循环写，如下面这个图所示。
 
-![](<../.gitbook/assets/image (140) (1).png>)
+![](<../../.gitbook/assets/image (140) (1).png>)
 
 write pos 是当前记录的位置，一边写一边后移，写到第 3 号文件末尾后就回到 0 号文件开头。checkpoint 是当前要擦除的位置，也是往后推移并且循环的，擦除记录前要把记录更新到数据文件。
 
@@ -203,7 +203,7 @@ write pos 和 checkpoint 之间的是“粉板”上还空着的部分，可以�
 
 这里我给出这个 update 语句的执行流程图，图中浅色框表示是在 InnoDB 内部执行的，深色框表示是在执行器中执行的。
 
-![](<../.gitbook/assets/image (143) (1) (1).png>)
+![](<../../.gitbook/assets/image (143) (1) (1).png>)
 
 你可能注意到了，最后三步看上去有点“绕”，将 redo log 的写入拆成了两个步骤：prepare 和 commit，这就是"两阶段提交"。
 
@@ -270,7 +270,7 @@ write pos 和 checkpoint 之间的是“粉板”上还空着的部分，可以�
 mysql> create table T(c int) engine=InnoDB;insert into T(c) values(1);
 ```
 
-![](<../.gitbook/assets/image (143) (1).png>)
+![](<../../.gitbook/assets/image (143) (1).png>)
 
 我们来看看在不同的隔离级别下，事务 A 会有哪些不同的返回结果，也就是图里面 V1、V2、V3 的返回值分别是什么。
 
@@ -303,7 +303,7 @@ mysql> show variables like 'transaction_isolation'; +-----------------------+---
 
 假设一个值从 1 被按顺序改成了 2、3、4，在回滚日志里面就会有类似下面的记录。
 
-![](<../.gitbook/assets/image (142) (1).png>)
+![](<../../.gitbook/assets/image (142) (1).png>)
 
 当前值是 4，但是在查询这条记录的时候，不同时刻启动的事务会有不同的 read-view。如图中看到的，在视图 A、B、C 里面，这一个记录的值分别是 1、2、4，同一条记录在系统中可以存在多个版本，就是数据库的多版本并发控制（MVCC）。对于 read-view A，要得到 1，就必须将当前值依次执行图中所有的回滚操作得到。
 
@@ -358,7 +358,7 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 假设，你现在维护着一个身份证信息和姓名的表，需要根据身份证号查找对应的名字，这时对应的哈希索引的示意图如下所示：
 
-![](<../.gitbook/assets/image (144).png>)
+![](<../../.gitbook/assets/image (144).png>)
 
 图中，User2 和 User4 根据身份证号算出来的值都是 N，但没关系，后面还跟了一个链表。假设，这时候你要查 ID\_card\_n2 对应的名字是什么，处理步骤就是：首先，将 ID\_card\_n2 通过哈希函数算出 N；然后，按顺序遍历，找到 User2。
 
@@ -370,7 +370,7 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 而**有序数组在等值查询和范围查询场景中的性能就都非常优秀**。还是上面这个根据身份证号查名字的例子，如果我们使用有序数组来实现的话，示意图如下所示：
 
-![](<../.gitbook/assets/image (146).png>)
+![](<../../.gitbook/assets/image (146).png>)
 
 这里我们假设身份证号没有重复，这个数组就是按照身份证号递增的顺序保存的。这时候如果你要查 ID\_card\_n2 对应的名字，用二分法就可以快速得到，这个时间复杂度是 O(log(N))。
 
@@ -382,7 +382,7 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 二叉搜索树也是课本里的经典数据结构了。还是上面根据身份证号查名字的例子，如果我们用二叉搜索树来实现的话，示意图如下所示：
 
-![](<../.gitbook/assets/image (145).png>)
+![](<../../.gitbook/assets/image (145).png>)
 
 二叉搜索树的特点是：每个节点的左儿子小于父节点，父节点又小于右儿子。这样如果你要查 ID\_card\_n2 的话，按照图中的搜索顺序就是按照 UserA -> UserC -> UserF -> User2 这个路径得到。这个时间复杂度是 O(log(N))。
 
@@ -424,7 +424,7 @@ mysql> create table T(id int primary key, k int not null, name varchar(16),index
 
 表中 R1\~R5 的 (ID,k) 值分别为 (100,1)、(200,2)、(300,3)、(500,5) 和 (600,6)，两棵树的示例示意图如下。
 
-![](<../.gitbook/assets/image (140).png>)
+![](<../../.gitbook/assets/image (140).png>)
 
 从图中不难看出，根据叶子节点的内容，索引类型分为主键索引和非主键索引。
 
@@ -494,7 +494,7 @@ B+ 树为了维护索引有序性，在插入新值的时候需要做必要的�
 mysql> create table T (ID int primary key,k int NOT NULL DEFAULT 0, s varchar(16) NOT NULL DEFAULT '',index k(k))engine=InnoDB; insert into T values(100,1, 'aa'),(200,2,'bb'),(300,3,'cc'),(500,5,'ee'),(600,6,'ff'),(700,7,'gg');
 ```
 
-![图 1 InnoDB 的索引组织结构](<../.gitbook/assets/image (143).png>)
+![图 1 InnoDB 的索引组织结构](<../../.gitbook/assets/image (143).png>)
 
 现在，我们一起来看看这条 SQL 查询语句的执行流程：
 
@@ -540,7 +540,7 @@ CREATE TABLE `tuser` (  `id` int(11) NOT NULL,  `id_card` varchar(32) DEFAULT NU
 
 为了直观地说明这个概念，我们用（name，age）这个联合索引来分析。
 
-![图 2 （name，age）索引示意图](<../.gitbook/assets/image (142).png>)
+![图 2 （name，age）索引示意图](<../../.gitbook/assets/image (142).png>)
 
 可以看到，索引项是按照索引定义里面出现的字段顺序排序的。
 
@@ -582,9 +582,9 @@ mysql> select * from tuser where name like '张 %' and age=10 and ismale=1;
 
 下图是这两个过程的执行流程图。
 
-![图3 无索引下推执行流程](<../.gitbook/assets/image (147).png>)
+![图3 无索引下推执行流程](<../../.gitbook/assets/image (147).png>)
 
-![图4 索引下推执行流程](<../.gitbook/assets/image (141).png>)
+![图4 索引下推执行流程](<../../.gitbook/assets/image (141).png>)
 
 在图 3 和 4 这两个图里面，每一个虚线箭头表示回表一次。
 
