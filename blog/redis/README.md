@@ -1,6 +1,6 @@
 # Redis
 
-![](<../.gitbook/assets/image (140) (1) (1).png>)
+![](<../../.gitbook/assets/image (140) (1) (1).png>)
 
 ### 一、Redis基础概念
 
@@ -96,7 +96,7 @@ Redis支持多种类型的数据结构，如:
 
 Redis的数据结构如下图所示：
 
-![图1 Redis数据结构](../.gitbook/assets/redis-ds.png)
+![图1 Redis数据结构](../../.gitbook/assets/redis-ds.png)
 
 #### 2.1 Redis keys
 
@@ -177,7 +177,7 @@ Redis lists基于Linked Lists实现，这意味着即使在一个list中有数�
 
 基于Redis Lists可以实现消息队列，将需要延后处理的任务结构体序列化成字符串塞进 Redis 的列表，另一个线程从这个列表中轮询数据进行处理。
 
-![图2 基于Redis Lists实现消息队列](../.gitbook/assets/redis-rpop.png)
+![图2 基于Redis Lists实现消息队列](../../.gitbook/assets/redis-rpop.png)
 
 通过 LPUSH，RPOP 这样的方式，会存在一个性能风险点，就是消费者如果想要及时的处理数据，就要在程序中写个类似 while(true) 这样的逻辑，不停的去调用 RPOP 或 LPOP 命令，这就会给消费者程序带来些不必要的性能损失。
 
@@ -238,7 +238,7 @@ sorted set有两种实现方式，一种是ziplist压缩表，一种是zset(dict
 Redis是基于内存的nosql，有些场景下为了节省内存redis会用“时间”换“空间”，ziplist就是很典型的例子。ziplist是由_**一系列特殊编码的连续内存块组成的顺序存储结构**_，类似于数组，ziplist在内存中是连续存储的，但是不同于数组，为了节省内存 ziplist的每个元素所占的内存大小可以不同（数组中叫元素，ziplist叫节点**entry**，下文都用“节点”），每个节点可以用来存储一个整数或者一个字符串。\
 下图是ziplist在内存中的布局：
 
-![图3 ziplist](../.gitbook/assets/ziplist.png)
+![图3 ziplist](../../.gitbook/assets/ziplist.png)
 
 * zlbytes: ziplist的长度（单位: 字节)，是一个32位无符号整数
 * zltail: ziplist最后一个节点的偏移量，反向遍历ziplist或者pop尾部节点的时候有用。
@@ -254,7 +254,7 @@ Redis是基于内存的nosql，有些场景下为了节省内存redis会用“�
 
 跳表本质上是对链表的一种优化，通过逐层跳步采样的方式构建索引，以加快查找速度。如果只用普通链表，只能一个一个往后找。跳表就不一样了，可以高层索引，一次跳跃多个节点，如果找过头了，就用更下层的索引。
 
-![图4 skiplist](../.gitbook/assets/skiplist.png)
+![图4 skiplist](../../.gitbook/assets/skiplist.png)
 
 使用概率均衡的思路，确定新插入节点的层数。Redis使用随机函数决定层数。直观上来说，默认1层，和丢硬币一样，如果是正面就继续往上，这样持续迭代，最大层数32层。可以看到，50%的概率被分配到第一层，25%的概率被分配到第二层，12.5%的概率被分配到第三层。这种方式保证了越上层数量越少，自然跨越起来越方便。
 
@@ -451,13 +451,13 @@ Redis有两种发布/订阅模式：
 
 
 
-![图5 基于chanel的发布订阅](<../.gitbook/assets/image (141) (1) (1).png>)
+![图5 基于chanel的发布订阅](<../../.gitbook/assets/image (141) (1) (1).png>)
 
 **基于模式(pattern)的发布/订阅**
 
 如果有某个/某些模式和这个频道匹配的话，那么所有订阅这个/这些频道的客户端也同样会收到信息。
 
-![图6 基于pattern的发布订阅](<../.gitbook/assets/image (140) (1) (1) (1).png>)
+![图6 基于pattern的发布订阅](<../../.gitbook/assets/image (140) (1) (1) (1).png>)
 
 
 
