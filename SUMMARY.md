@@ -1,58 +1,38 @@
 # Table of contents
 
-* [数据结构与算法](README.md)
-* [倒排索引](dao-pai-suo-yin.md)
+## 数据结构与算法
+
+* [数据结构与算法思维导图](README.md)
+* [Leetcode解题笔记（1-20）](shu-ju-jie-gou-yu-suan-fa/untitled.md)
+* [倒排索引](shu-ju-jie-gou-yu-suan-fa/dao-pai-suo-yin.md)
+* [智能算法总结](shu-ju-jie-gou-yu-suan-fa/zhi-neng-suan-fa-zong-jie.md)
 
 ## 数据库 <a href="#blog" id="blog"></a>
 
-## 分布式与系统设计 <a href="#database" id="database"></a>
-
-* [消息队列](database/xiao-xi-dui-lie.md)
-* [MySQL](database/mysql/README.md)
-  * [Page 1](database/mysql/page-1.md)
-* [Redis](database/redis.md)
-* [数据库思维导图](database/shu-ju-ku-si-wei-dao-tu.md)
-* [MySQL索引及锁](database/mysql-suo-yin-ji-suo.md)
+* [数据库思维导图](blog/shu-ju-ku-si-wei-dao-tu.md)
+* [MySQL](blog/mysql/README.md)
+  * [MySQL索引及锁](blog/mysql/mysql-suo-yin-ji-suo.md)
+  * [Page 1](blog/mysql/page-1.md)
+* [Redis](blog/redis.md)
 
 ## Java及其框架 <a href="#java" id="java"></a>
 
 * [Java线程池学习笔记](java/java-xian-cheng-chi-xue-xi-bi-ji.md)
 * [初识Spring源码](java/chu-shi-spring-yuan-ma.md)
 * [多线程纲要](java/duo-xian-cheng-gang-yao.md)
+* [串一串JVM知识点](java/chuan-yi-chuan-jvm-zhi-shi-dian.md)
 
 ## 操作系统&计算机网络 <a href="#operate-and-network" id="operate-and-network"></a>
 
 * [计算机网络思维导图](operate-and-network/ji-suan-ji-wang-luo-si-wei-dao-tu.md)
 * [操作系统思维导图](operate-and-network/cao-zuo-xi-tong-si-wei-dao-tu.md)
-* [Shell学习笔记](operate-and-network/shell.md)
 * [Linux学习笔记](operate-and-network/linux.md)
 
-## 机器学习 <a href="#ml" id="ml"></a>
+## 分布式与系统设计 <a href="#system" id="system"></a>
 
-* [智能算法总结](ml/zhi-neng-suan-fa-zong-jie.md)
+* [系统设计思维导图](system/xi-tong-she-ji-si-wei-dao-tu.md)
+* [消息队列](system/xiao-xi-dui-lie.md)
 
 ## 计算广告 <a href="#ad" id="ad"></a>
 
 * [《计算广告 第2版》思维导图](ad/da-gang.md)
-* [计算广告简史及概述](ad/ji-suan-guang-gao-jian-shi-ji-gai-shu.md)
-
-## Java <a href="#jvm" id="jvm"></a>
-
-* [Java基础](jvm/java.md)
-* [消息队列](jvm/xiao-xi-dui-lie.md)
-* [Java字节码增强](jvm/java-zi-jie-ma-zeng-qiang.md)
-* [串一串JVM知识点](jvm/chuan-yi-chuan-jvm-zhi-shi-dian.md)
-
-## 数据结构与算法
-
-* [数据结构与算法思维导图](shu-ju-jie-gou-yu-suan-fa/shu-ju-jie-gou-yu-suan-fa-si-wei-dao-tu.md)
-* [Leetcode解题笔记（1-20）](shu-ju-jie-gou-yu-suan-fa/untitled.md)
-
-## 系统设计
-
-* [系统设计思维导图](xi-tong-she-ji/xi-tong-she-ji-si-wei-dao-tu.md)
-* [分布式基础知识](xi-tong-she-ji/untitled.md)
-
-## 区块链
-
-* [区块链概述及其社会学意义](qu-kuai-lian/qu-kuai-lian-gai-shu-ji-qi-she-hui-xue-yi-yi.md)
