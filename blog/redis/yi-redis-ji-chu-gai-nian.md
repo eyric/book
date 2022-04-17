@@ -82,3 +82,11 @@ redis-cli -h 127.0.0.1 -p 6379
 redis-cli shutdown
 ```
 
+
+
+**附录**
+
+* [Redis下载与安装](https://www.cnblogs.com/liyihua/p/14482412.html?ivk\_sa=1024320u)
+* [阿里云Redis开发规范](https://developer.aliyun.com/article/531067)
+* [Redis发布订阅模式详解](https://pdai.tech/md/db/nosql-redis/db-redis-x-pub-sub.html)
+* [Redis数据类型Stream详解](https://pdai.tech/md/db/nosql-redis/db-redis-data-type-stream.html)
