@@ -236,9 +236,9 @@ mysql> select * from tuser where name like '张 %' and age=10 and ismale=1;
 
 下图是这两个过程的执行流程图。
 
-![图3 无索引下推执行流程](<../../.gitbook/assets/image (147).png>)
+![图3 无索引下推执行流程](<../../.gitbook/assets/image (147) (1).png>)
 
-![图4 索引下推执行流程](<../../.gitbook/assets/image (141).png>)
+![图4 索引下推执行流程](<../../.gitbook/assets/image (141) (1).png>)
 
 在图 3 和 4 这两个图里面，每一个虚线箭头表示回表一次。
 
