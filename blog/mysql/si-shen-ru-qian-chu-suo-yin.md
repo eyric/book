@@ -36,7 +36,7 @@
 
 二叉搜索树也是课本里的经典数据结构了。还是上面根据身份证号查名字的例子，如果我们用二叉搜索树来实现的话，示意图如下所示：
 
-![](<../../.gitbook/assets/image (145).png>)
+![](<../../.gitbook/assets/image (145) (1).png>)
 
 二叉搜索树的特点是：每个节点的左儿子小于父节点，父节点又小于右儿子。这样如果你要查 ID\_card\_n2 的话，按照图中的搜索顺序就是按照 UserA -> UserC -> UserF -> User2 这个路径得到。这个时间复杂度是 O(log(N))。
 
@@ -78,7 +78,7 @@ mysql> create table T(id int primary key, k int not null, name varchar(16),index
 
 表中 R1\~R5 的 (ID,k) 值分别为 (100,1)、(200,2)、(300,3)、(500,5) 和 (600,6)，两棵树的示例示意图如下。
 
-![](<../../.gitbook/assets/image (140).png>)
+![](<../../.gitbook/assets/image (140) (1).png>)
 
 从图中不难看出，根据叶子节点的内容，索引类型分为主键索引和非主键索引。
 
