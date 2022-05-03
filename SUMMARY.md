@@ -18,6 +18,7 @@
   * [四、深入浅出索引](blog/mysql/si-shen-ru-qian-chu-suo-yin.md)
   * [五、全局锁和表锁 ：给表加个字段怎么有这么多阻碍？](blog/mysql/wu-quan-ju-suo-he-biao-suo-gei-biao-jia-ge-zi-duan-zen-mo-you-zhe-mo-duo-zu-ai.md)
   * [六、行锁功过：怎么减少行锁对性能的影响？](blog/mysql/liu-hang-suo-gong-guo-zen-mo-jian-shao-hang-suo-dui-xing-neng-de-ying-xiang.md)
+  * [七、事务到底是隔离的还是不隔离的？](blog/mysql/qi-shi-wu-dao-di-shi-ge-li-de-huan-shi-bu-ge-li-de.md)
 * [Redis](blog/redis.md)
   * [一、Redis基础概念](blog/redis/yi-redis-ji-chu-gai-nian.md)
   * [二、Redis数据结构](blog/redis/er-redis-shu-ju-jie-gou.md)

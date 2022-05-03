@@ -8,7 +8,7 @@ mysql> select * from T where ID=10；
 
 我们看到的只是输入一条语句，返回一个结果，却不知道这条语句在 MySQL 内部的执行过程。下面给出的是 MySQL 的基本架构示意图，从中你可以清楚地看到 SQL 语句在 MySQL 的各个功能模块中的执行过程。
 
-![MySQL逻辑架构图](<../../.gitbook/assets/image (142) (1) (1).png>)
+![MySQL逻辑架构图](<../../.gitbook/assets/image (142) (1) (1) (1).png>)
 
 大体来说，MySQL 可以分为 **Server 层**和**存储引擎层**两部分。
 
