@@ -43,7 +43,8 @@
 ## 分布式与系统设计 <a href="#system" id="system"></a>
 
 * [系统设计思维导图](system/xi-tong-she-ji-si-wei-dao-tu.md)
-* [消息队列](system/xiao-xi-dui-lie.md)
+* [消息队列](system/xiao-xi-dui-lie/README.md)
+  * [一、消息队列应用场景](system/xiao-xi-dui-lie/yi-xiao-xi-dui-lie-ying-yong-chang-jing.md)
 
 ## 计算广告 <a href="#ad" id="ad"></a>
 
